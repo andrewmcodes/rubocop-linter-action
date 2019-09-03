@@ -2,6 +2,7 @@
 
 ## v0.1.2
 
+- [b2799b6](https://github.com/andrewmcodes/rubocop-linter-action/commit/b2799b640f7f09232bc1c589ec373e15c35ce82c) add changelog
 - [99ee409](https://github.com/andrewmcodes/rubocop-linter-action/commit/99ee4090634615b9b675ba844e45aefd312d9df4) update documentation
 - [87d22fe](https://github.com/andrewmcodes/rubocop-linter-action/commit/87d22feb2891815e8cd87d04f0ca3fa229114477) Update issue templates
 - [a8f310b](https://github.com/andrewmcodes/rubocop-linter-action/commit/a8f310be4319852fa76ca2d9bce95113b487014c) add contributing guide

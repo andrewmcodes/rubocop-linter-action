@@ -12,7 +12,7 @@ Add the following to your GitHub action workflow:
 
 ```yaml
 - name: Rubocop Linter
-  uses: andrewmcodes/rubocop-linter-action@0.1.2
+  uses: andrewmcodes/rubocop-linter-action@v0.1.2
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -40,7 +40,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y postgresql-client libpq-dev
     - name: Rubocop Linter
-      uses: andrewmcodes/rubocop-linter-action@0.1.2
+      uses: andrewmcodes/rubocop-linter-action@v0.1.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```

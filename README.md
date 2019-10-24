@@ -2,9 +2,11 @@
 
 # Rubocop Linter Action
 
-![version number](https://img.shields.io/static/v1?label=Version&message=v0.1.2&color=blue)
+![version number](https://img.shields.io/static/v1?label=Version&message=v0.2.0&color=blue)
 
-GitHub Action to run Rubocop against your code.
+GitHub Action to run Rubocop against your code and create annotations in the UI.
+
+**NOTE: due to the GitHub Check Runs API, we can only return 50 annotations per run. See [here](https://developer.github.com/v3/checks/runs/#output-object) for more info.**
 
 ## Usage
 
@@ -12,7 +14,7 @@ Add the following to your GitHub action workflow:
 
 ```yaml
 - name: Rubocop Linter
-  uses: andrewmcodes/rubocop-linter-action@v0.1.2
+  uses: andrewmcodes/rubocop-linter-action@v0.2.0
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -20,27 +22,23 @@ Add the following to your GitHub action workflow:
 ## Example Workflow
 
 ```yaml
-name: Ruby
+name: Rubocop
 
-on: [push]
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.6.x
-    - name: add PostgreSQL dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y postgresql-client libpq-dev
     - name: Rubocop Linter
-      uses: andrewmcodes/rubocop-linter-action@v0.1.2
+      uses: andrewmcodes/rubocop-linter-action@v0.2.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```

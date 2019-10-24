@@ -11,9 +11,8 @@ require 'time'
 @repository = @event["repository"]
 @owner = @repository["owner"]["login"]
 @repo = @repository["name"]
-
+@conclusion = "success"
 @check_name = "Rubocop"
-
 @headers = {
   "Content-Type": 'application/json',
   "Accept": 'application/vnd.github.antiope-preview+json',
@@ -46,8 +45,6 @@ end
 def update_check(id, conclusion, output)
   body = {
     "name" => @check_name,
-    "head_sha" => @GITHUB_SHA,
-    "status" => 'completed',
     "completed_at" => Time.now.iso8601,
     "conclusion" => conclusion,
     "output" => output
@@ -56,7 +53,6 @@ def update_check(id, conclusion, output)
   http = Net::HTTP.new('api.github.com', 443)
   http.use_ssl = true
   path = "/repos/#{@owner}/#{@repo}/check-runs/#{id}"
-
   resp = http.patch(path, body.to_json, @headers)
 
   if resp.code.to_i >= 300
@@ -73,13 +69,25 @@ end
 }
 
 def run_rubocop
-  annotations = []
+  annotations = annotation_messages
+
+  output = {
+    "title": @check_name,
+    "summary": "#{annotations.size} offense(s) found",
+    "annotations" => annotations
+  }
+
+  return { "output" => output, "conclusion" => @conclusion }
+end
+
+def annotation_messages
   errors = nil
+  count = 0
+  annotation_list = []
+
   Dir.chdir(@GITHUB_WORKSPACE) {
     errors = JSON.parse(`rubocop --format json`)
   }
-  conclusion = "success"
-  count = 0
 
   errors["files"].each do |file|
     path = file["path"]
@@ -92,27 +100,22 @@ def run_rubocop
       annotation_level = @annotation_levels[severity]
       count = count + 1
 
+      return annotation_list if count == 48
+
       if annotation_level == "failure"
-        conclusion = "failure"
+        @conclusion = "failure"
       end
 
-      annotations.push({
-                         "path" => path,
-                         "start_line" => location["start_line"],
-                         "end_line" => location["start_line"],
-                         "annotation_level": annotation_level,
-                         "message" => message
-                       })
+      annotation_list.push({
+                        "path" => path,
+                        "start_line" => location["start_line"],
+                        "end_line" => location["start_line"],
+                        "annotation_level": annotation_level,
+                        "message" => message
+                      })
     end
   end
-
-  output = {
-    "title": @check_name,
-    "summary": "#{count} offense(s) found",
-    "annotations" => annotations
-  }
-
-  return { "output" => output, "conclusion" => conclusion }
+  return annotation_list
 end
 
 def run
@@ -121,7 +124,6 @@ def run
     results = run_rubocop()
     conclusion = results["conclusion"]
     output = results["output"]
-
     update_check(id, conclusion, output)
   rescue
     update_check(id, "failure", nil)

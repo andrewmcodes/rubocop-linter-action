@@ -1,0 +1,11 @@
+Layout/IndentFirstHashElement:
+  EnforcedStyle: consistent
+
+Metrics/MethodLength:
+  Max: 16
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120

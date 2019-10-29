@@ -9,7 +9,7 @@ LABEL "com.github.actions.color"="red"
 
 LABEL "repository"="https://github.com/andrewmcodes/rubocop-linter-action"
 LABEL "maintainer"="Andrew Mason <andrewmcodes@protonmail.com>"
-LABEL "version"="0.2.0"
+LABEL "version"="1.0.0"
 
 
 COPY lib /action/lib

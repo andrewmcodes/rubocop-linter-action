@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "MiguelSavignano",
+      "name": "Miguel Savignano",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6641863?v=4",
+      "profile": "https://github.com/MiguelSavignano",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "rubocop-linter-action",
+  "projectOwner": "andrewmcodes",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}

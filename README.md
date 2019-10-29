@@ -2,7 +2,8 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 # Rubocop Linter Action
-
+![Rubocop](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Rubocop/badge.svg)
+![Tests](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Test/badge.svg)
 ![version number](https://img.shields.io/static/v1?label=Version&message=v0.2.0&color=blue)
 
 GitHub Action to run Rubocop against your code and create annotations in the UI.
@@ -25,13 +26,7 @@ Add the following to your GitHub action workflow:
 ```yaml
 name: Rubocop
 
-on:
-  pull_request:
-    branches:
-      - '*'
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   build:

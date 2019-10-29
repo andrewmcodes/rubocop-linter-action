@@ -6,17 +6,6 @@
   "commit": false,
   "contributors": [
     {
-      "login": "MiguelSavignano",
-      "name": "Miguel Savignano",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/6641863?v=4",
-      "profile": "https://github.com/MiguelSavignano",
-      "contributions": [
-        "infra",
-        "test",
-        "code"
-      ]
-    },
-    {
       "login": "andrewmcodes",
       "name": "Andrew Mason",
       "avatar_url": "https://avatars1.githubusercontent.com/u/18423853?v=4",
@@ -25,6 +14,17 @@
         "infra",
         "review",
         "doc",
+        "code"
+      ]
+    },
+    {
+      "login": "MiguelSavignano",
+      "name": "Miguel Savignano",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6641863?v=4",
+      "profile": "https://github.com/MiguelSavignano",
+      "contributions": [
+        "infra",
+        "test",
         "code"
       ]
     }

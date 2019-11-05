@@ -53,8 +53,8 @@ class GithubCheckRunService
           title: CHECK_NAME,
           summary: @summary,
           annotations: (@annotations if @conclusion == 'failure')
-        }
-      }.compact
+        }.compact
+      }
     )
   end
 end

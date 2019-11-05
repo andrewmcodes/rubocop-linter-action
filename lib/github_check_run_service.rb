@@ -52,8 +52,9 @@ class GithubCheckRunService
         output: {
           title: CHECK_NAME,
           summary: @summary,
-        }.merge!({ annotations: @annotations } if @conclusion == 'failure')
-      }
+          annotations: (@annotations if @conclusion == 'failure')
+        }
+      }.compact
     )
   end
 end

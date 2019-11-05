@@ -1,4 +1,4 @@
-name: Action CI
+name: Build
 
 on: [push]
 

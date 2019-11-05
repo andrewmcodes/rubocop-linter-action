@@ -1,5 +1,6 @@
 ![Rubocop](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Rubocop/badge.svg)
 ![Tests](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Test/badge.svg)
+![Build](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Build/badge.svg)
 ![Version Number](https://img.shields.io/static/v1?label=Version&message=v1.0.0&color=blue)
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 

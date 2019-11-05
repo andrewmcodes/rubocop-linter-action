@@ -4,7 +4,7 @@ RUN apk add --update build-base git
 
 LABEL "repository"="https://github.com/andrewmcodes/rubocop-linter-action"
 LABEL "maintainer"="Andrew Mason <andrewmcodes@protonmail.com>"
-LABEL "version"="1.0.0"
+LABEL "version"="1.0.1"
 
 LABEL "com.github.actions.name"="Rubocop Linter"
 LABEL "com.github.actions.description"="A GitHub Action that lints your Ruby code with Rubocop!"

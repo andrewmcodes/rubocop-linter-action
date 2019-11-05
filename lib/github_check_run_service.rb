@@ -47,14 +47,12 @@ class GithubCheckRunService
 
   def update_check_payload
     base_payload('completed').merge!(
-      {
-        conclusion: @conclusion,
-        output: {
-          title: CHECK_NAME,
-          summary: @summary,
-          annotations: (@annotations if @conclusion == 'failure')
-        }.compact
-      }
+      conclusion: @conclusion,
+      output: {
+        title: CHECK_NAME,
+        summary: @summary,
+        annotations: (@annotations if @conclusion == 'failure')
+      }.compact
     )
   end
 end

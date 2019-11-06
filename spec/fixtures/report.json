@@ -27,13 +27,13 @@
         },
         {
           "severity": "convention",
-          "message": "Line is too long. [83/80]",
-          "cop_name": "Metrics/LineLength",
+          "message": "Method has too many lines. [15/10]",
+          "cop_name": "Metrics/MethodLength",
           "corrected": false,
           "location": {
             "start_line": 50,
             "start_column": 81,
-            "last_line": 50,
+            "last_line": 65,
             "last_column": 83,
             "length": 3,
             "line": 50,

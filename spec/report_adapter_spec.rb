@@ -19,14 +19,31 @@ describe ReportAdapter do
     expect(result).to eq('201 offense(s) found')
   end
 
-  it '.annotations' do
-    result = adapter.annotations(rubocop_report)
-    expect(result.first).to eq(
-      'path' => 'Gemfile',
-      'start_line' => 1,
-      'end_line' => 1,
-      'annotation_level' => 'failure',
-      'message' => 'Missing magic comment `# frozen_string_literal: true`.'
-    )
+  context 'when error is on the same line' do
+    it '.annotations' do
+      result = adapter.annotations(rubocop_report)
+      expect(result.first).to eq(
+        'path' => 'Gemfile',
+        'start_line' => 1,
+        'end_line' => 1,
+        'start_column' => 1,
+        'end_column' => 1,
+        'annotation_level' => 'failure',
+        'message' => 'Missing magic comment `# frozen_string_literal: true`.'
+      )
+    end
+  end
+
+  context 'when error is not on the same line' do
+    it '.annotations' do
+      result = adapter.annotations(rubocop_report)
+      expect(result[1]).to eq(
+        'path' => 'Gemfile',
+        'start_line' => 50,
+        'end_line' => 65,
+        'annotation_level' => 'failure',
+        'message' => 'Method has too many lines. [15/10]'
+      )
+    end
   end
 end

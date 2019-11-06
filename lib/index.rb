@@ -18,12 +18,11 @@ end
   owner: ENV['GITHUB_REPOSITORY_OWNER'] || @event_json.dig('repository', 'owner', 'login'),
   repo: ENV['GITHUB_REPOSITORY_NAME'] || @event_json.dig('repository', 'name')
 }
-
 @report =
   if ENV['REPORT_PATH']
     read_json(ENV['REPORT_PATH'])
   else
-    Dir.chdir(ENV['GITHUB_WORKSPACE']) { JSON.parse(`rubocop -f json`) }
+    Dir.chdir(ENV['GITHUB_WORKSPACE']) { JSON.parse(`rubocop --parallel -f json`) }
   end
 
 GithubCheckRunService.new(@report, @github_data, ReportAdapter).run

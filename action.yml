@@ -6,7 +6,7 @@ runs:
   using: 'docker'
   image: 'docker://ruby:2.6.5-alpine'
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: secrets.GITHUB_TOKEN
 branding:
   icon: 'code'
   color: 'red'

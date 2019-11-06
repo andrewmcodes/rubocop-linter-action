@@ -4,15 +4,19 @@
 ![Version Number](https://img.shields.io/static/v1?label=Version&message=v1.0.1&color=blue)
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
-# Rubocop Linter Action
+# :white_check_mark: Rubocop Linter Action
 
-GitHub Action to run Rubocop against your code and create annotations in the UI.
+A GitHub Action to run Rubocop against your code and create annotations in the GitHub UI.
 
-**NOTE: due to the GitHub Check Runs API, we can only return 50 annotations per run. See [here](https://developer.github.com/v3/checks/runs/#output-object) for more info.**
+## :page_facing_up: Introduction
 
-## Usage
+GitHub Actions are an amazing new tool that can dramatically improve productivity while using the GitHub platform. While it is not hard to write a custom GitHub action to run Rubocop on your codebase, this action takes that functionality one step further using the checks API. After the Rubocop Linter Action runs Rubocop against your code, it will create annotations that you can easily view, matched up with the offending code.
 
-Add the following to your GitHub action workflow:
+Since GitHub actions and the checks API are continually changing, it is possible that there will be breaking API changes that affect this action. If so, please open an issue and I will look into it as soon as I can.
+
+## :bulb: Usage
+
+Add the following to your GitHub action workflow to use Rubocop Linter Action:
 
 ```yaml
 - name: Rubocop Linter
@@ -21,7 +25,9 @@ Add the following to your GitHub action workflow:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## Example Workflow
+### :package: Example Workflow
+
+Here is an example workflow file incorporating Rubocop Linter Action:
 
 ```yaml
 name: Rubocop
@@ -39,27 +45,32 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## Screenshots
+## :warning: Gotchas
 
-![example GitHub Action UI](screenshots/ui-example.png)
+Due to the GitHub Check Runs API, we can only return 50 annotations per run. See [here](https://developer.github.com/v3/checks/runs/#output-object) for more info.
 
-## Contributing
+## :camera_flash: Screenshots
+
+![Rubocop Linter Checks Overview](screenshots/check-overview.png)
+![Rubocop Linter File Annotation](screenshots/file-annotation.png)
+
+## :sos: Contributing
 
 [Contributing Guide](/CONTRIBUTING.md)
 
-## Code of Conduct
+## :rotating_light: Code of Conduct
 
 [Code of Conduct](/CODE_OF_CONDUCT.md)
 
-## License
+## :copyright: License
 
 [MIT](/LICENSE.md)
 
-## Recognition
+## :1st_place_medal: Recognition
 
 This project was originally forked from [gimenete/rubocop-action](https://github.com/gimenete/rubocop-action). Many thanks to [Alberto Gimeno](https://github.com/gimenete) for creating this project.
 
-## Contributors ✨
+## ✨ Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 

@@ -1,0 +1,12 @@
+
+name: 'Rubocop Linter'
+description: 'A GitHub Action that lints your Ruby code with Rubocop!'
+author: 'Andrew Mason <andrewmcodes@protonmail.com>'
+runs:
+  using: 'docker'
+  image: 'docker://ruby:2.6.5-alpine'
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+branding:
+  icon: 'code'
+  color: 'red'

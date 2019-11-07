@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 group :development do
+  gem 'github_changelog_generator', '~> 1.15.0'
   gem 'rubocop', '~> 0.76.0'
 end
 

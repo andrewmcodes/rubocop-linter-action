@@ -17,7 +17,7 @@ class GithubCheckRunService
     )['id']
     @summary = @report_adapter.summary(@report)
     @annotations = @report_adapter.annotations(@report)
-    @conclusion = @report_adapter.conslusion(@report)
+    @conclusion = @report_adapter.conclusion(@report)
 
     @client.patch(
       "#{endpoint_url}/#{id}",

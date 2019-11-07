@@ -9,8 +9,8 @@ describe ReportAdapter do
 
   let(:adapter) { ReportAdapter }
 
-  it '.conslusion' do
-    result = adapter.conslusion(rubocop_report)
+  it '.conclusion' do
+    result = adapter.conclusion(rubocop_report)
     expect(result).to eq('failure')
   end
 

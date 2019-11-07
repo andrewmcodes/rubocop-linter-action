@@ -11,15 +11,15 @@ class GithubCheckRunService
   end
 
   def run
-    x = @client.post(
+    id = @client.post(
       endpoint_url,
       create_check_payload
-    )
-    puts x
-    id = x['id']
+    )['id']
     @summary = @report_adapter.summary(@report)
     @annotations = @report_adapter.annotations(@report)
     @conclusion = @report_adapter.conclusion(@report)
+
+    puts update_check_payload
 
     @client.patch(
       "#{endpoint_url}/#{id}",

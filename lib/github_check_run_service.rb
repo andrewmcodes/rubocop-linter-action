@@ -53,7 +53,7 @@ class GithubCheckRunService
         title: CHECK_NAME,
         summary: @summary,
         annotations: @annotations
-      }.compact
+      }
     )
   end
 end

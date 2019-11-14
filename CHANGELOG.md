@@ -4,12 +4,19 @@
 
 [Full Changelog](https://github.com/andrewmcodes/rubocop-linter-action/compare/v1.0.3...HEAD)
 
+**Implemented enhancements:**
+
+- \[suggestion\] offending cop name in annotation message [\#47](https://github.com/andrewmcodes/rubocop-linter-action/issues/47)
+
 **Closed issues:**
 
 - Create automated changelog  [\#38](https://github.com/andrewmcodes/rubocop-linter-action/issues/38)
 
 **Merged pull requests:**
 
+- docs: add bbugh as a contributor [\#50](https://github.com/andrewmcodes/rubocop-linter-action/pull/50) ([allcontributors[bot]](https://github.com/apps/allcontributors))
+- Add cop name to report messages [\#49](https://github.com/andrewmcodes/rubocop-linter-action/pull/49) ([bbugh](https://github.com/bbugh))
+- Use 'notice' annotation style for refactor + convention offenses [\#46](https://github.com/andrewmcodes/rubocop-linter-action/pull/46) ([reidab](https://github.com/reidab))
 - add changelog generator [\#44](https://github.com/andrewmcodes/rubocop-linter-action/pull/44) ([andrewmcodes](https://github.com/andrewmcodes))
 
 ## [v1.0.3](https://github.com/andrewmcodes/rubocop-linter-action/tree/v1.0.3) (2019-11-07)
@@ -38,7 +45,6 @@
 - add start and end column support [\#34](https://github.com/andrewmcodes/rubocop-linter-action/pull/34) ([andrewmcodes](https://github.com/andrewmcodes))
 - update readme [\#33](https://github.com/andrewmcodes/rubocop-linter-action/pull/33) ([andrewmcodes](https://github.com/andrewmcodes))
 - add action.yml and cleanup dockerfile [\#32](https://github.com/andrewmcodes/rubocop-linter-action/pull/32) ([andrewmcodes](https://github.com/andrewmcodes))
-- v1.0.1 version bump [\#31](https://github.com/andrewmcodes/rubocop-linter-action/pull/31) ([andrewmcodes](https://github.com/andrewmcodes))
 
 ## [v1.0.1](https://github.com/andrewmcodes/rubocop-linter-action/tree/v1.0.1) (2019-11-05)
 
@@ -54,6 +60,7 @@
 
 **Merged pull requests:**
 
+- v1.0.1 version bump [\#31](https://github.com/andrewmcodes/rubocop-linter-action/pull/31) ([andrewmcodes](https://github.com/andrewmcodes))
 - Update dockerfile and add build test action [\#30](https://github.com/andrewmcodes/rubocop-linter-action/pull/30) ([andrewmcodes](https://github.com/andrewmcodes))
 - Do not send in an empty array of annotations on success [\#29](https://github.com/andrewmcodes/rubocop-linter-action/pull/29) ([andrewmcodes](https://github.com/andrewmcodes))
 

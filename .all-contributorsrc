@@ -45,6 +45,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "reidab",
+      "name": "Reid Beels",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13192?v=4",
+      "profile": "http://reidbeels.com",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,

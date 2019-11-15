@@ -13,6 +13,7 @@ A GitHub Action to run [Rubocop](https://github.com/rubocop-hq/rubocop) against 
   - [:page_facing_up: Introduction](#pagefacingup-introduction)
   - [:bulb: Usage](#bulb-usage)
     - [:package: Example Workflow](#package-example-workflow)
+    - [:moneybag: Available Inputs](#moneybag-available-inputs)
   - [:warning: Gotchas](#warning-gotchas)
   - [:camera_flash: Screenshots](#cameraflash-screenshots)
   - [:bookmark: Changelog](#bookmark-changelog)
@@ -36,6 +37,9 @@ Add the following to your GitHub action workflow to use Rubocop Linter Action:
 ```yaml
 - name: Rubocop Linter
   uses: andrewmcodes/rubocop-linter-action@v1.0.4
+  with:
+    additional_gems: 'rubocop-rails rubocop-performance'
+    fail_level: 'warning'
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -56,9 +60,23 @@ jobs:
     - uses: actions/checkout@v1
     - name: Rubocop Linter
       uses: andrewmcodes/rubocop-linter-action@v1.0.4
+      with:
+        additional_gems: 'rubocop-rails rubocop-performance'
+        fail_level: 'warning'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+### :moneybag: Available Inputs
+
+| Input Parm Name | Required | Default Value        | Description                                                                                          |
+| ---             | ---      | ---                  | ---                                                                                                  |
+| file_paths      | false    |                      | Define the paths you wish to be linted per run. multiple paths can be on one line just add a space. Default is everthing not excluded from definintion in config file |
+| version         | false    | latest GA            | Define a later version of rubocop if latest is not needed                                            |
+| additional_gems | false    | rubocop-performance rubocop-rails rubocop-minitest rubocop-rspec | Additional Gems can be installed via one line with spaces and commands are supported like a version |
+| config_path     | false    | repo ./              | If the config path is another spot in the repo or not named .haml-lint.yml                           |
+| exclude_cops    | false    |                      | Define a list of paths to exclude from being linted.                                                 |
+| fail_level      | false    | 'warning'            | Can define 'refactor', 'convention', 'warning', 'error' and 'fatal' to cause rubocop to error out on |
 
 ## :warning: Gotchas
 

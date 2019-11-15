@@ -27,12 +27,17 @@ inputs:
     description: 'Define Fail level, available values are refactor, convention, warning, error and fatal'
     required: false
     default: 'warning'
+  bundle:
+    description: 'Useful gemfile, useful for using your oen version of the gem'
+    required: false
+    default: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.version }}
     - ${{ inputs.additional_gems }}
+    - ${{ inputs.bundle }}
 env:
   GITHUB_TOKEN: secrets.GITHUB_TOKEN
 branding:

@@ -71,6 +71,7 @@ jobs:
 
 | Input Parm Name | Required | Default Value        | Description                                                                                          |
 | ---             | ---      | ---                  | ---                                                                                                  |
+| bundle          | false    | false                | If you want to use a version of a gem you maintain this is your best bet, longer time for load could be seen |
 | file_paths      | false    |                      | Define the paths you wish to be linted per run. multiple paths can be on one line just add a space. Default is everthing not excluded from definintion in config file |
 | version         | false    | latest GA            | Define a later version of rubocop if latest is not needed                                            |
 | additional_gems | false    | rubocop-performance rubocop-rails rubocop-minitest rubocop-rspec | Additional Gems can be installed via one line with spaces and commands are supported like a version |

@@ -2,9 +2,33 @@
 name: 'Rubocop Linter Action'
 description: 'A GitHub Action that lints your Ruby code with Rubocop!'
 author: 'Andrew Mason <andrewmcodes@protonmail.com>'
+inputs:
+  version:
+    description: 'Define a specific version of Rubocop otherwise uses latest'
+    required: false
+    default: ''
+  additional_gems:
+    description: 'Define additional gems to install to use with rubocop'
+    required: false
+  config_path:
+    description: 'Define a path to a config file not in the ./ named .rubocop.yml'
+    required: false
+  excluded_cops:
+    description: 'List out Cops or departments to exclude from run'
+    required: false
+  file_paths:
+    description: 'List File paths to inspect, default is all files not excluded in .rubocop.yml file'
+    required: false
+  fail_level:
+    description: 'Define Fail level, available values are refactor, convention, warning, error and fatal'
+    required: false
+    default: 'warning'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.version }}
+    - ${{ inputs.additional_gems }}
 env:
   GITHUB_TOKEN: secrets.GITHUB_TOKEN
 branding:

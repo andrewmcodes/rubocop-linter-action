@@ -29,9 +29,7 @@ end
   if ENV['REPORT_PATH']
     read_json(ENV['REPORT_PATH'])
   else
-    Dir.chdir(ENV['GITHUB_WORKSPACE']) {
-      JSON.parse(`#{@rubocop}`)
-    }
+    Dir.chdir(ENV['GITHUB_WORKSPACE']) { JSON.parse(`#{@rubocop}`) }
   end
 
 GithubCheckRunService.new(@report, @github_data, ReportAdapter).run

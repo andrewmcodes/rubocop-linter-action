@@ -10,6 +10,7 @@ inputs:
   additional_gems:
     description: 'Define additional gems to install to use with rubocop'
     required: false
+    default: 'rubocop-performance rubocop-rails rubocop-minitest rubocop-rspec'
   config_path:
     description: 'Define a path to a config file not in the ./ named .rubocop.yml'
     required: false

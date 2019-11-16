@@ -28,7 +28,7 @@ inputs:
     required: false
     default: 'warning'
   bundle:
-    description: 'Useful gemfile, useful for using your oen version of the gem'
+    description: 'Bundle your gemfile, to use a specific version or a repo of a gem'
     required: false
     default: false
 runs:

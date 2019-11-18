@@ -2,7 +2,7 @@
 ![Tests](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Test/badge.svg)
 ![Build](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Build/badge.svg)
 [![Changelog](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Changelog/badge.svg)](/CHANGELOG.md)
-![Version Number](https://img.shields.io/static/v1?label=Version&message=v1.0.4&color=blue)
+![Version Number](https://img.shields.io/static/v1?label=Version&message=v1.0.5&color=blue)
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 # :white_check_mark: Rubocop Linter Action
@@ -36,7 +36,7 @@ Add the following to your GitHub action workflow to use Rubocop Linter Action:
 
 ```yaml
 - name: Rubocop Linter
-  uses: andrewmcodes/rubocop-linter-action@v1.0.4
+  uses: andrewmcodes/rubocop-linter-action@v1.0.5
   with:
     additional_gems: 'rubocop-rails rubocop-performance'
     fail_level: 'warning'
@@ -59,7 +59,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Rubocop Linter
-      uses: andrewmcodes/rubocop-linter-action@v1.0.4
+      uses: andrewmcodes/rubocop-linter-action@v1.0.5
       with:
         additional_gems: 'rubocop-rails rubocop-performance'
         fail_level: 'warning'

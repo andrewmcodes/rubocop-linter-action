@@ -28,6 +28,6 @@ jobs:
     name: Shell Lint Action
     runs-on: ubuntu-latest
     steps:
-      - uses: azohra/shell-linter@v0.1.0
-        with:
-          path: "./lib/entrypoint.sh"
+      - uses: actions/checkout@master
+      - name: Run Shell Linter
+        uses: azohra/shell-linter@v0.1.0

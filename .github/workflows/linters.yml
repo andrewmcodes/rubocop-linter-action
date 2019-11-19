@@ -30,4 +30,4 @@ jobs:
     steps:
       - uses: azohra/shell-linter@v0.1.0
         with:
-          path: "lib/entrypoint.sh"
+          path: "./lib/entrypoint.sh"

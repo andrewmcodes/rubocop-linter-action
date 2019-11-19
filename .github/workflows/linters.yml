@@ -1,4 +1,4 @@
-name: Rubocop
+name: Linters
 
 on:
   pull_request:
@@ -24,3 +24,10 @@ jobs:
         bundle install --jobs 4 --retry 3
     - name: Run Rubocop
       run: bin/rubocop
+  shell_linter:
+    name: Shell Lint Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: azohra/shell-linter@v0.1.0
+        with:
+          path: "setup.sh"

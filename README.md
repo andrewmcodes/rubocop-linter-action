@@ -1,4 +1,4 @@
-![Rubocop](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Rubocop/badge.svg)
+![Linters](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Linters/badge.svg)
 ![Tests](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Test/badge.svg)
 ![Build](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Build/badge.svg)
 [![Changelog](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Changelog/badge.svg)](/CHANGELOG.md)

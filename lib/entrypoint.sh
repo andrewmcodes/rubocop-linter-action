@@ -11,7 +11,7 @@ else
 fi
 
 if [ -n "${INPUT_ADDITIONAL_GEMS}" ]; then
-  gem install "${INPUT_ADDITIONAL_GEMS}"
+  eval "gem install ${INPUT_ADDITIONAL_GEMS}"
 fi
 
 ruby /action/lib/index.rb

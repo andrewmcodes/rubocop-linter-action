@@ -17,5 +17,4 @@ then
   gem install "${INPUT_ADDITIONAL_GEMS}"
 fi
 
-
 ruby /action/lib/index.rb

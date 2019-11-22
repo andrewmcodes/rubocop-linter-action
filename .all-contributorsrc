@@ -76,6 +76,15 @@
         "doc",
         "infra"
       ]
+    },
+    {
+      "login": "InteNs",
+      "name": "Mark Havekes",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6474105?v=4",
+      "profile": "https://github.com/InteNs",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

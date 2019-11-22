@@ -67,6 +67,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+**Go [here](https://github.com/andrewmcodes/rubocop-linter-action-playground/blob/master/.github/workflows/test.yml) to see more examples!**
+
 ### :moneybag: Available Inputs
 
 | **Input Parm Name** | **Required** | **Default Value**                                                | **Description**                                                                                       | **Examples of Equivalent Local Commands**                                  |
@@ -81,7 +83,9 @@ jobs:
 
 ## :warning: Gotchas
 
-Due to the GitHub Check Runs API, we can only return 50 annotations per run. See [here](https://developer.github.com/v3/checks/runs/#output-object) for more info.
+1. Due to the GitHub Check Runs API, we can only return 50 annotations per run. See [here](https://developer.github.com/v3/checks/runs/#output-object) for more info.
+2. There is a bug with the Checks API that might cause your runs to get jumbled in the UI, but they will all still run and render annotations in the diff correctly.
+3. You can't use --version with multiple gems. You can specify multiple gems with version requirements using `gem install 'my_gem:1.0.0' 'my_other_gem:~>2.0.0'`
 
 ## :camera_flash: Screenshots
 

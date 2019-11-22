@@ -18,15 +18,3 @@ jobs:
       uses: './'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  dispatch:
-    name: Update playground
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Repository Dispatch
-      uses: peter-evans/repository-dispatch@v1
-      with:
-        token: ${{ secrets.DISPATCH_ACCESS_TOKEN }}
-        repository: andrewmcodes/rubocop-linter-action-playground
-        event-type: rubocop-linter-action-test
-        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "actor": "${{ github.actor }}"}'

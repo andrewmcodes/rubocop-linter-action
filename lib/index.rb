@@ -20,7 +20,7 @@ end
 }
 
 @rubocop = 'rubocop --parallel -f json'
-@rubocop += ' -L' + ENV['INPUT_FILE_PATHS'] if ENV['INPUT_FILE_PATHS'] != ''
+@rubocop += ' -L ' + ENV['INPUT_FILE_PATHS'] if ENV['INPUT_FILE_PATHS'] != ''
 @rubocop += ' -c ' + ENV['INPUT_CONFIG_PATH'] if ENV['INPUT_CONFIG_PATH'] != ''
 @rubocop += ' --except ' + ENV['INPUT_EXCLUDED_COPS'] if ENV['INPUT_EXCLUDED_COPS'] != ''
 @rubocop += ' --fail-level ' + ENV['INPUT_FAIL_LEVEL']

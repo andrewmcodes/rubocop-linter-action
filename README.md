@@ -69,15 +69,15 @@ jobs:
 
 ### :moneybag: Available Inputs
 
-| Input Parm Name | Required | Default Value        | Description                                                                                          |
-| ---             | ---      | ---                  | ---                                                                                                  |
-| bundle          | false    | false                | If you want to use a version of a gem you maintain this is your best bet, longer time for load could be seen |
-| file_paths      | false    |                      | Define the paths you wish to be linted per run. multiple paths can be on one line just add a space. Default is everthing not excluded from definintion in config file |
-| version         | false    | latest GA            | Define a later version of rubocop if latest is not needed                                            |
-| additional_gems | false    | rubocop-performance rubocop-rails rubocop-minitest rubocop-rspec | Additional Gems can be installed via one line with spaces and commands are supported like a version |
-| config_path     | false    | repo ./              | If the config path is another spot in the repo or not named .haml-lint.yml                           |
-| exclude_cops    | false    |                      | Define a list of paths to exclude from being linted.                                                 |
-| fail_level      | false    | 'warning'            | Can define 'refactor', 'convention', 'warning', 'error' and 'fatal' to cause rubocop to error out on |
+| **Input Parm Name** | **Required** | **Default Value**                                                | **Description**                                                                                       | **Examples of Equivalent Local Commands**                                  |
+| ------------------- | ------------ | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| bundle              | false        | false                                                            | If you would like to run `bundle install` on your project instead of `gem install`                    | `bundle install --deployment --jobs 4 --retry 3`                           |
+| file_paths          | false        |                                                                  | Specify paths to run cops against relative to the root of your project.                               | `rubocop -L 'app/controllers/**/*.rb'`                                     |
+| version             | false        | latest GA                                                        | Define a later version of rubocop if latest is not needed                                             | `gem install rubocop -v 0.76.0`                                            |
+| additional_gems     | false        | rubocop-performance rubocop-rails rubocop-minitest rubocop-rspec | Additional Gems can be installed via one line with spaces and commands are supported like a version   | `gem install rubocop-thread_safety -v 0.3.4 rubocop-i18n -v 2.0.0`         |
+| config_path         | false        | repo ./                                                          | If the config path is another spot in the repo or not named .haml-lint.yml                            | `rubocop -c .rubocop_config_test.yml`                                      |
+| exclude_cops        | false        |                                                                  | Define a list of paths to exclude from being linted.                                                  | `rubocop --except 'Style/FrozenStringLiteralComment Style/StringLiterals'` |
+| fail_level          | false        | 'warning'                                                        | Can define `refactor`, `convention`, `warning`, `error` and 'fatal' to cause Rubocop to error out on. | `rubocop --fail-level 'warning'`                                           |
 
 ## :warning: Gotchas
 

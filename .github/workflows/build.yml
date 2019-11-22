@@ -19,7 +19,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   dispatch:
-    name: Trigger build on playground
+    name: Trigger build on playground repo
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1

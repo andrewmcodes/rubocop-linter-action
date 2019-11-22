@@ -24,8 +24,6 @@ end
 @rubocop += ' --except ' + ENV['INPUT_EXCLUDED_COPS'] if ENV['INPUT_EXCLUDED_COPS'] != ''
 @rubocop += ' --fail-level ' + ENV['INPUT_FAIL_LEVEL']
 
-puts @rubocop
-
 @report =
   if ENV['REPORT_PATH']
     read_json(ENV['REPORT_PATH'])

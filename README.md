@@ -2,7 +2,7 @@
 ![Tests](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Test/badge.svg)
 ![Build](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Build/badge.svg)
 [![Changelog](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Changelog/badge.svg)](/CHANGELOG.md)
-![Version Number](https://img.shields.io/static/v1?label=Version&message=v1.0.6&color=blue)
+![Version Number](https://img.shields.io/static/v1?label=Version&message=v2.0.0&color=blue)
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 # :white_check_mark: Rubocop Linter Action
@@ -36,12 +36,22 @@ Add the following to your GitHub action workflow to use Rubocop Linter Action:
 
 ```yaml
 - name: Rubocop Linter
-  uses: andrewmcodes/rubocop-linter-action@v1.0.6
+  uses: andrewmcodes/rubocop-linter-action@v2.0.0
   with:
     additional_gems: 'rubocop-rails rubocop-performance'
     fail_level: 'warning'
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+It is **highly** recommend you tie yourself to a version and do not do the following. I promise your life will be much easier. 😇
+
+```yml
+# ❌ Danger, sometimes I break things!
+uses: andrewmcodes/rubocop-linter-action@master
+
+# ✅ Much better.
+uses: andrewmcodes/rubocop-linter-action@2.0.0
 ```
 
 ### :package: Example Workflow
@@ -59,7 +69,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Rubocop Linter
-      uses: andrewmcodes/rubocop-linter-action@v1.0.6
+      uses: andrewmcodes/rubocop-linter-action@v2.0.0
       with:
         additional_gems: 'rubocop-rails rubocop-performance'
         fail_level: 'warning'

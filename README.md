@@ -51,7 +51,7 @@ It is **highly** recommend you tie yourself to a version and do not do the follo
 uses: andrewmcodes/rubocop-linter-action@master
 
 # ✅ Much better.
-uses: andrewmcodes/rubocop-linter-action@2.0.0
+uses: andrewmcodes/rubocop-linter-action@v2.0.0
 ```
 
 ### :package: Example Workflow

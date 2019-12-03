@@ -71,7 +71,7 @@ jobs:
     - name: Rubocop Linter
       uses: andrewmcodes/rubocop-linter-action@v2.0.0
       with:
-        additional_gems: 'rubocop-rails rubocop-performance'
+        additional_gems: 'rubocop-rails rubocop-performance relaxed-rubocop'
         fail_level: 'warning'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

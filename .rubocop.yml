@@ -1,4 +1,4 @@
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 Metrics/MethodLength:

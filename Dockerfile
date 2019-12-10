@@ -7,8 +7,8 @@ LABEL "maintainer"="Andrew Mason <andrewmcodes@protonmail.com>"
 LABEL "version"="2.0.1"
 
 COPY lib /action/lib
-COPY README.md LICENSE /
+COPY README.md LICENSE entrypoint.sh /
 
 RUN gem install bundler
 
-ENTRYPOINT ["/action/lib/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

@@ -1,6 +1,3 @@
-Layout/FirstHashElementIndentation:
-  EnforcedStyle: consistent
-
 Metrics/MethodLength:
   Max: 16
 

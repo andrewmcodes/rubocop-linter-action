@@ -3,31 +3,27 @@
 require './spec/spec_helper'
 
 describe ReportAdapter do
-  let(:rubocop_report) do
-    JSON(File.read('./spec/fixtures/report.json'))
+  let(:rubocop_report) { JSON(File.read('./spec/fixtures/report.json')) }
+  subject { ReportAdapter }
+
+  context 'when exit code is 0' do
+    it 'succeedes' do
+      rubocop_report['__exit_code'] = 0
+      expect(subject.conclusion(rubocop_report)).to eq('success')
+    end
   end
 
-  let(:adapter) { ReportAdapter }
-
-  it '.conclusion_happy' do
-    rubocop_report['__exit_code'] = 0
-    result = adapter.conclusion(rubocop_report)
-    expect(result).to eq('success')
+  context 'when exit code is 1' do
+    it { expect(subject.conclusion(rubocop_report)).to eq('failure') }
   end
 
-  it '.conclusion_failure' do
-    result = adapter.conclusion(rubocop_report)
-    expect(result).to eq('failure')
-  end
-
-  it '.summary' do
-    result = adapter.summary(rubocop_report)
-    expect(result).to eq('201 offense(s) found')
+  context 'summary has offenses' do
+    it { expect(subject.summary(rubocop_report)).to eq('201 offense(s) found') }
   end
 
   context 'when error is on the same line' do
-    it '.annotations' do
-      result = adapter.annotations(rubocop_report)
+    it 'has start and end column keys' do
+      result = subject.annotations(rubocop_report)
       expect(result.first).to eq(
         'path' => 'Gemfile',
         'start_line' => 1,
@@ -41,8 +37,8 @@ describe ReportAdapter do
   end
 
   context 'when error is not on the same line' do
-    it '.annotations' do
-      result = adapter.annotations(rubocop_report)
+    it 'does not have start and end column keys' do
+      result = subject.annotations(rubocop_report)
       expect(result[1]).to eq(
         'path' => 'Gemfile',
         'start_line' => 50,

@@ -1,40 +1,82 @@
 # frozen_string_literal: true
 
+# requires ...................................................................
 require 'net/http'
 require 'json'
 require 'time'
-require_relative './report_adapter'
-require_relative './github_check_run_service'
-require_relative './github_client'
+require 'yaml'
 
-def read_json(path)
-  JSON.parse(File.read(path))
+# require relatives ..........................................................
+require_relative './configuration'
+require_relative './commit'
+require_relative './command'
+require_relative './github/check_run_service'
+require_relative './github/client'
+require_relative './github/data'
+require_relative './install'
+require_relative './report'
+require_relative './report_adapter'
+require_relative './results'
+require_relative './util'
+
+class RubocopLinterAction
+  def self.run
+    new.run
+  end
+
+  def run
+    install_gems
+    run_check_run_service
+    commit if autocorrect?
+  end
+
+  private
+
+  def config
+    @config ||= Configuration.new(github_data.workspace).build
+  end
+
+  def github_data
+    @github_data ||= Github::Data.new(Util.read_json(ENV['GITHUB_EVENT_PATH']))
+  end
+
+  def commit
+    Commit.new(github_data, autocorrect_commit_message).run
+  end
+
+  def install_gems
+    Install.new(config).run
+  end
+
+  def command
+    Command.new(config).build
+  end
+
+  def report
+    Report.new(github_data, command).build
+  end
+
+  def run_check_run_service
+    Github::CheckRunService.new(
+      report: report,
+      github_data: github_data,
+      report_adapter: ReportAdapter,
+      check_name: check_name
+    ).run
+  end
+
+  def check_name
+    config.fetch('check_name', 'Rubocop Action')
+  end
+
+  def autocorrect?
+    autocorrect = config.fetch('autocorrect', false)
+    true if autocorrect == 'safe' || autocorrect == 'unsafe'
+  end
+
+  def autocorrect_commit_message
+    config.fetch('autocorrect_commit_message', 'Rubocop Linter Action: autocorrect cops')
+  end
 end
 
-@event_json = read_json(ENV['GITHUB_EVENT_PATH']) if ENV['GITHUB_EVENT_PATH']
-@github_data = {
-  sha: ENV['GITHUB_SHA'],
-  token: ENV['GITHUB_TOKEN'],
-  owner: ENV['GITHUB_REPOSITORY_OWNER'] || @event_json.dig('repository', 'owner', 'login'),
-  repo: ENV['GITHUB_REPOSITORY_NAME'] || @event_json.dig('repository', 'name')
-}
-
-@rubocop = 'rubocop --parallel -f json'
-@rubocop += ' -c ' + ENV['INPUT_CONFIG_PATH'] if ENV['INPUT_CONFIG_PATH'] != ''
-@rubocop += ' --except ' + ENV['INPUT_EXCLUDED_COPS'] if ENV['INPUT_EXCLUDED_COPS'] != ''
-@rubocop += ' --fail-level ' + ENV['INPUT_FAIL_LEVEL']
-
-cmd_sysout = `#{@rubocop}`
-# Sorry, I'm a purist and $? is well understood without requiring anything.
-# rubocop:disable Style/SpecialGlobalVars
-cmd_result = $?.to_i
-# rubocop:enable Style/SpecialGlobalVars
-@report =
-  if ENV['REPORT_PATH']
-    read_json(ENV['REPORT_PATH'])
-  else
-    Dir.chdir(ENV['GITHUB_WORKSPACE']) { JSON.parse(cmd_sysout) }
-  end
-@report['__exit_code'] = cmd_result
-
-GithubCheckRunService.new(@report, @github_data, ReportAdapter).run
+RubocopLinterAction.run

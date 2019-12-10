@@ -18,12 +18,16 @@ class ReportAdapter
     end
 
     def summary(report)
-      "#{total_offenses(report)} offense(s) found"
+      corrected_count = total_corrected_offenses(report)
+      message = "#{total_offenses(report)} offense(s) found."
+      message = "#{message} #{corrected_count} offsense(s) corrected." if corrected_count > 0
+      message
     end
 
     def annotations(report) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       annotation_list = []
       count = 0
+      corrected = 0
       report['files'].each do |file|
         file['offenses'].each do |offense|
           count += 1

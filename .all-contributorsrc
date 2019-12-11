@@ -85,11 +85,21 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "hackerdude",
+      "name": "David Martinez",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/30315?v=4",
+      "profile": "http://www.hackerdude.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "rubocop-linter-action",
   "projectOwner": "andrewmcodes",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }

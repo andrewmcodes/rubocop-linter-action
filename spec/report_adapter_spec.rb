@@ -18,7 +18,7 @@ describe ReportAdapter do
   end
 
   context 'summary has offenses' do
-    it { expect(subject.summary(rubocop_report)).to eq('201 offense(s) found') }
+    it { expect(subject.summary(rubocop_report)).to eq('201 offense(s) found.') }
   end
 
   context 'when error is on the same line' do

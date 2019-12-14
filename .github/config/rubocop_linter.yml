@@ -39,13 +39,3 @@ bundle: false
 # Valid options: 'modified'
 # Default: none, aka Rubocop is run against the entire codebase
 check_scope: 'modified'
-# Ability to toggle running autocorrect in the rubocop command.
-# If there are failing lints, the action will push them to the branch.
-# Valid options: 'unsafe', 'safe', false
-# Default: false
-autocorrect: 'safe'
-# Commit message for autocorrect commits. Not needed
-# if autocorrect does not equal 'safe' or 'unsafe'
-# Valid options: a string like 'fix cops'
-# Default: 'Rubocop Linter Action: autocorrect cops'
-autocorrect_commit_message: 'Rubocop Linter Action: autocorrect cops'

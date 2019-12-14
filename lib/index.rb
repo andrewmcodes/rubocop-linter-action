@@ -8,7 +8,6 @@ require 'yaml'
 
 # require relatives ..........................................................
 require_relative './configuration'
-require_relative './commit'
 require_relative './command'
 require_relative './github/check_run_service'
 require_relative './github/client'
@@ -40,10 +39,6 @@ class RubocopLinterAction
     @github_data ||= Github::Data.new(Util.read_json(ENV['GITHUB_EVENT_PATH']))
   end
 
-  def commit
-    Commit.new(github_data, autocorrect_commit_message).run
-  end
-
   def install_gems
     Install.new(config).run
   end
@@ -67,15 +62,6 @@ class RubocopLinterAction
 
   def check_name
     config.fetch('check_name', 'Rubocop Action')
-  end
-
-  def autocorrect?
-    autocorrect = config.fetch('autocorrect', false)
-    true if autocorrect == 'safe' || autocorrect == 'unsafe'
-  end
-
-  def autocorrect_commit_message
-    config.fetch('autocorrect_commit_message', 'Rubocop Linter Action: autocorrect cops')
   end
 end
 

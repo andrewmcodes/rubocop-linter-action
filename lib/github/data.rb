@@ -27,13 +27,5 @@ module Github
     def workspace
       ENV['GITHUB_WORKSPACE']
     end
-
-    def actor
-      ENV['GITHUB_ACTOR']
-    end
-
-    def branch
-      `echo ${GITHUB_REF##*/}`.strip
-    end
   end
 end

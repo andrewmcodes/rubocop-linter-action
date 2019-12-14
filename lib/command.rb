@@ -10,14 +10,13 @@ class Command
   def build
     return base_command unless config
 
-    "#{check_scope} #{base_command} #{autocorrect_command} #{fail_level} #{rubocop_config} #{excluded}".
-      strip.squeeze(' ')
+    "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(' ')
   end
 
   private
 
   def base_command
-    "rubocop #{"--parallel" unless autocorrect} -f json"
+    'rubocop --parallel -f json'
   end
 
   def check_scope
@@ -37,16 +36,5 @@ class Command
   def fail_level
     level = config.fetch('rubocop_fail_level', '')
     return "--fail-level #{level}" unless level.empty?
-  end
-
-  def autocorrect
-    @autocorrect ||= config.fetch('autocorrect', false)
-  end
-
-  def autocorrect_command
-    return '--safe-auto-correct' if autocorrect == 'safe'
-    return '--auto-correct' if autocorrect == 'unsafe'
-
-    nil
   end
 end

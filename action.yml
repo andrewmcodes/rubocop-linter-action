@@ -3,15 +3,15 @@ name: 'Rubocop Linter Action'
 description: 'A GitHub Action that lints your Ruby code with Rubocop!'
 author: 'Andrew Mason <andrewmcodes@protonmail.com>'
 inputs:
-  action_config:
-    description: 'Define a path to your action config'
+  action_config_path:
+    description: 'Define a path to your optional action config file.'
     required: false
-    default: './.github/config/rubocop_linter.yml'
+    default: '.github/config/rubocop_linter_action.yml'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.action_config }}
+    - ${{ inputs.action_config_path }}
 env:
   GITHUB_TOKEN: secrets.GITHUB_TOKEN
 branding:

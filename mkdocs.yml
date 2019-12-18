@@ -1,0 +1,10 @@
+site_name: Rubocop Linter Action Docs
+nav:
+    - Home: index.md
+    - Introduction: introduction.md
+    - Usage:
+        - 'Quick Start': 'quick-start.md'
+        - 'Example Workflow': 'example-workflow.md'
+        - 'Configuration': 'configuration.md'
+    - FAQ: 'faq.md'
+theme: readthedocs

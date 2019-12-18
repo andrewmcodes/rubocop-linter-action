@@ -147,6 +147,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/InteNs"><img src="https://avatars1.githubusercontent.com/u/6474105?v=4" width="100px;" alt=""/><br /><sub><b>Mark Havekes</b></sub></a><br /><a href="https://github.com/andrewmcodes/rubocop-linter-action/issues?q=author%3AInteNs" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://www.hackerdude.com"><img src="https://avatars3.githubusercontent.com/u/30315?v=4" width="100px;" alt=""/><br /><sub><b>David Martinez</b></sub></a><br /><a href="https://github.com/andrewmcodes/rubocop-linter-action/commits?author=hackerdude" title="Code">💻</a></td>
+    <td align="center"><a href="http://gorails.com"><img src="https://avatars1.githubusercontent.com/u/67093?v=4" width="100px;" alt=""/><br /><sub><b>Chris Oliver</b></sub></a><br /><a href="https://github.com/andrewmcodes/rubocop-linter-action/pulls?q=is%3Apr+reviewed-by%3Aexcid3" title="Reviewed Pull Requests">👀</a> <a href="#ideas-excid3" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 

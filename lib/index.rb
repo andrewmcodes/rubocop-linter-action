@@ -26,7 +26,6 @@ class RubocopLinterAction
   def run
     install_gems
     run_check_run_service
-    commit if autocorrect?
   end
 
   private

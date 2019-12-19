@@ -4,8 +4,9 @@ nav:
     - Introduction: introduction.md
     - Usage:
         - 'Quick Start': 'quick-start.md'
-        - 'Example Workflow': 'example-workflow.md'
         - 'Configuration': 'configuration.md'
+        - 'Inputs': inputs.md
+        - 'Example Workflow': 'example-workflow.md'
         - 'Rubocop Tips': 'rubocop.md'
     - FAQ: 'faq.md'
 theme: readthedocs

@@ -6,5 +6,6 @@ nav:
         - 'Quick Start': 'quick-start.md'
         - 'Example Workflow': 'example-workflow.md'
         - 'Configuration': 'configuration.md'
+        - 'Rubocop Tips': 'rubocop.md'
     - FAQ: 'faq.md'
 theme: readthedocs

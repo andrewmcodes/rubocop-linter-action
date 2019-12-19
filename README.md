@@ -1,34 +1,30 @@
-[version]: <> "v2.0.0"
-[release]: https://github.com/andrewmcodes/rubocop-linter-action/releases/latest
+<!-- Variables -->
+
+<!-- Files -->
 [changelog]: /CHANGELOG.md
+[coc]: /CODE_OF_CONDUCT.md
+[contributing]: /CONTRIBUTING.md
+[license]: /LICENSE.md
+<!-- Images -->
 [image1]: /screenshots/check-overview.png
 [image2]: /screenshots/file-annotation.png
+[logo]: /screenshots/rubocop-linter-action.png
 
+<!-- End Variables -->
+
+![Rubocop Linter Action][logo]
 ![Linters](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Linters/badge.svg)
 ![Tests](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Test/badge.svg)
-![Build](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Build/badge.svg)
-![Version Number](https://img.shields.io/static/v1?label=Version&message=v2.0.1&color=blue)
 [![Changelog](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Changelog/badge.svg)][changelog]
+![Build](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Build/badge.svg)
+
+![Version Number](https://img.shields.io/static/v1?label=Version&message=v2.0.1&color=blue)
 [![Documentation Status](https://readthedocs.org/projects/rubocop-linter-action/badge/?version=latest)](https://rubocop-linter-action.readthedocs.io/en/latest/?badge=latest)
 [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
 
 # Rubocop Linter Action
-A GitHub Action to run [Rubocop](https://github.com/rubocop-hq/rubocop) against your codebase and output the results in the [GitHub Checks UI](https://developer.github.com/changes/2018-05-07-new-checks-api-public-beta/).
 
-- [Rubocop Linter Action](#rubocop-linter-action)
-  - [Introduction](#introduction)
-  - [Usage](#usage)
-    - [Quickstart](#quickstart)
-    - [Version Contraints](#version-contraints)
-    - [Example Workflows](#example-workflows)
-  - [:camera_flash: Screenshots](#cameraflash-screenshots)
-  - [:bookmark: Changelog](#bookmark-changelog)
-  - [:sos: Contributing](#sos-contributing)
-  - [:rotating_light: Code of Conduct](#rotatinglight-code-of-conduct)
-  - [:copyright: License](#copyright-license)
-  - [:1st_place_medal: Recognition](#1stplacemedal-recognition)
-  - [:robot: Check Out My Other Ruby GitHub Actions](#robot-check-out-my-other-ruby-github-actions)
-  - [✨ Contributors](#%e2%9c%a8-contributors)
+A GitHub Action to run [Rubocop](https://github.com/rubocop-hq/rubocop) against your codebase and output the results in the [GitHub Checks UI](https://developer.github.com/changes/2018-05-07-new-checks-api-public-beta/).
 
 ## Introduction
 
@@ -37,6 +33,10 @@ GitHub Actions are an amazing new tool that can dramatically improve productivit
 Since GitHub actions and the checks API are continually changing, it is possible that there will be breaking API changes that affect this action. If so, please open an issue and I will look into it as soon as I can.
 
 ## Usage
+
+### Documentation
+
+**Please view the [official documentation](https://rubocop-linter-action.readthedocs.io) for more detailed instructions**, including how to setup and use a configuration file to customize the action. Note that you can set the version for the documentation you are viewing in the bottom right.
 
 ### Quickstart
 
@@ -49,71 +49,35 @@ Default usage, similar to running `gem install rubocop && rubocop` from your com
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-### Version Contraints
-
-It is **highly** recommended you constrain your action to a specific version.
-
-```yml
-# ❌ Danger, sometimes we break things or the GitHub API changes without notice!
-uses: andrewmcodes/rubocop-linter-action@master
-
-# ✅ Much better.
-uses: andrewmcodes/rubocop-linter-action@v2.0.1
-```
-
-### Example Workflows
-
-Here is an example workflow file incorporating Rubocop Linter Action with customized usage based on the values in your configuration file:
-
-```yaml
-name: Linters
-
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Rubocop Linter
-      uses: andrewmcodes/rubocop-linter-action@v2.0.1
-      with:
-        action_config_path: '.github/config/rubocop_linter_action.yml' # Note: this is the default location
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-## :camera_flash: Screenshots
+### Screenshots
 
 ![Rubocop Linter Checks Overview][image1]
 ![Rubocop Linter File Annotation][image2]
 
-## :bookmark: Changelog
+## Community
 
-[View our Changelog](/CHANGELOG.md)
+### Changelog
 
-## :sos: Contributing
+[View our Changelog][changelog]
 
-[Contributing Guide](/CONTRIBUTING.md)
+### Contributing
 
-## :rotating_light: Code of Conduct
+[Contributing Guide][contributing]
 
-[Code of Conduct](/CODE_OF_CONDUCT.md)
+### Code of Conduct
 
-## :copyright: License
+[Code of Conduct][coc]
 
-[MIT](/LICENSE.md)
+### License
 
-## :1st_place_medal: Recognition
+[MIT][license]
 
-This project was originally forked from [gimenete/rubocop-action](https://github.com/gimenete/rubocop-action). Many thanks to [Alberto Gimeno](https://github.com/gimenete) for creating this project.
-
-## :robot: Check Out My Other Ruby GitHub Actions
+## Other Ruby GitHub Actions
 
 - [andrewmcodes/haml-lint-action](https://github.com/andrewmcodes/haml-lint-action).
 - [andrewmcodes/standardrb-action](https://github.com/andrewmcodes/standardrb-action).
 
-## ✨ Contributors
+## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 

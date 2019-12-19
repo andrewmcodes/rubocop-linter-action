@@ -13,7 +13,3 @@ There is a bug with Checks that might cause your runs to get jumbled in the UI, 
 **3. How come I can't create checks on forked repositories? [(example)](https://github.com/ruby/spec/commit/1cfa9f188e8342993d149807210b6777189cfe3f/checks?check_suite_id=335929828)**
 
 This is currently how the GitHub Checks API works for security reasons. I believe we will get some improvements in the future, which may fix this.
-
-**4. Specifying different gem versions is broken!**
-
-You can't use --version with multiple gems. You can specify multiple gems with version requirements using `gem install 'my_gem:1.0.0' 'my_other_gem:~>2.0.0'`. This implementation has been improved in v3 of the action. Please migrate!

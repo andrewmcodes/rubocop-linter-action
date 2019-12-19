@@ -1,9 +1,9 @@
-### Example Workflow
+# Example Workflow
 
-Here is an example workflow file incorporating Rubocop Linter Action:
+Here is an example workflow file incorporating Rubocop Linter Action with customized usage based on the values in your configuration file:
 
 ```yaml
-name: Rubocop
+name: Linters
 
 on: [push]
 
@@ -11,14 +11,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Rubocop Linter
-      uses: andrewmcodes/rubocop-linter-action@v2.0.0
+      uses: andrewmcodes/rubocop-linter-action@v2.0.1
       with:
-        additional_gems: 'rubocop-rails rubocop-performance'
-        fail_level: 'warning'
+        action_config_path: '.github/config/rubocop_linter_action.yml' # Note: this is the default location
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-**Go [here](https://github.com/andrewmcodes/rubocop-linter-action-playground/blob/master/.github/workflows/test.yml) to see more examples!**
+**Go [here](https://github.com/andrewmcodes/rubocop-linter-action-playground/blob/master/.github/workflows) to see more examples!**

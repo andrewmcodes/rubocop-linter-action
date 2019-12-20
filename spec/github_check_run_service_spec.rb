@@ -3,7 +3,7 @@
 require './spec/spec_helper'
 
 describe Github::CheckRunService do
-  let(:rubocop_report) { JSON(File.read('./spec/fixtures/report.json')) }
+  let(:rubocop_report) { double(build: JSON(File.read('./spec/fixtures/report.json'))) }
   let(:github_data) { Github::Data.new(event) }
   subject do
     Github::CheckRunService.new(

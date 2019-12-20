@@ -47,7 +47,7 @@ class RubocopLinterAction
   end
 
   def report
-    Report.new(github_data, command).build
+    Report.new(github_data, command)
   end
 
   def run_check_run_service

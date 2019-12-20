@@ -28,7 +28,8 @@ jobs:
       - name: Bundle
         run: |
           gem install bundler
-          bundle install --jobs 4 --retry 3 --deployment
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
       - name: Run Rubocop
         run: bin/rubocop
   shell_linter:

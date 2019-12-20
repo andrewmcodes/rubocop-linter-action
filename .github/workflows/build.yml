@@ -1,15 +1,15 @@
-# name: Build
+name: Build
 
-# on: [push]
+on: [push]
 
-# jobs:
-#   build:
-#     name: Action CI
-#     runs-on: ubuntu-latest
-#     timeout-minutes: 2
-#     steps:
-#     - uses: actions/checkout@v1
-#     - name: Verify action syntax
-#       uses: './'
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  build:
+    name: Action CI
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+    - uses: actions/checkout@v1
+    - name: Verify action syntax
+      uses: './'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

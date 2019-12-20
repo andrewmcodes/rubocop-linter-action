@@ -12,25 +12,29 @@ module Github
     end
 
     def run
-      id = client.post(
+      id = create_check['id']
+      @results = report.build
+      update_check(id)
+    end
+
+    private
+
+    def create_check
+      client.post(
         endpoint_url,
         create_check_payload
-      )['id']
+      )
+    end
 
-      @results = report.build
-      
-      last_result = nil
+    def update_check(id, last_result = nil)
       annotations.each_slice(48) do |annotations_slice|
         last_result = client.patch(
           "#{endpoint_url}/#{id}",
           update_check_payload(annotations_slice)
         )
       end
-
       last_result
     end
-
-    private
 
     def client
       @client ||= Github::Client.new(github_data.token, user_agent: 'rubocop-linter-action')

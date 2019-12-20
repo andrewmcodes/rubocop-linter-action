@@ -21,15 +21,10 @@ class ReportAdapter
       "#{total_offenses(report)} offense(s) found."
     end
 
-    def annotations(report) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+    def annotations(report) # rubocop:disable Metrics/AbcSize
       report['files'].each_with_object([]) do |file, annotation_list|
         file['offenses'].each do |offense|
-          location = offense['location']
-          same_line = location['start_line'] == location['last_line']
-          has_columns = location['start_column'] && location['end_column']
-          if same_line && has_columns && location['start_column'] < location['end_column']
-            location['start_column'], location['end_column'] = location['end_column'], location['start_column']
-          end
+          location, same_line = column_check(offense['location'])
           annotation_list.push(
             {
               'path': file['path'],
@@ -46,6 +41,17 @@ class ReportAdapter
     end
 
     private
+
+    def column_check(location)
+      same_line = location['start_line'] == location['last_line']
+      has_columns = location['start_column'] && location['end_column']
+
+      if same_line && has_columns && location['start_column'] < location['end_column']
+        location['start_column'], location['end_column'] = location['end_column'], location['start_column']
+      end
+
+      [location, same_line]
+    end
 
     def annotation_level(severity)
       ANNOTATION_LEVELS[severity]

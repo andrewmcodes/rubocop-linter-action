@@ -6,6 +6,7 @@ jobs:
   build:
     name: Action CI
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
     - uses: actions/checkout@v1
     - name: Verify action syntax

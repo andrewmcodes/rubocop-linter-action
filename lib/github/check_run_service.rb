@@ -12,7 +12,7 @@ module Github
     end
 
     def run
-      id = create_check['id']
+      id = create_check["id"]
       @results = report.build
       update_check(id)
     end
@@ -37,7 +37,7 @@ module Github
     end
 
     def client
-      @client ||= Github::Client.new(github_data.token, user_agent: 'rubocop-linter-action')
+      @client ||= Github::Client.new(github_data.token, user_agent: "rubocop-linter-action")
     end
 
     def summary
@@ -66,11 +66,11 @@ module Github
     end
 
     def create_check_payload
-      base_payload('in_progress')
+      base_payload("in_progress")
     end
 
     def update_check_payload(annotations)
-      base_payload('completed').merge!(
+      base_payload("completed").merge!(
         conclusion: conclusion,
         output: {
           title: check_name,

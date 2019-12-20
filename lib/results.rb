@@ -19,6 +19,6 @@ class Results
   end
 
   def insert_exit_code
-    parsed_results['__exit_code'] = status_code
+    parsed_results["__exit_code"] = status_code
   end
 end

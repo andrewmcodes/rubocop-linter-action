@@ -10,3 +10,6 @@ Metrics/LineLength:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**'
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

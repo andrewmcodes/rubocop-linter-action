@@ -6,6 +6,7 @@ jobs:
   dispatch:
     name: Update playground
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
     - uses: actions/checkout@v1
     - name: Repository Dispatch

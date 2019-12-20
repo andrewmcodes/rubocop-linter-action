@@ -15,7 +15,7 @@ class Report
   private
 
   def report_path
-    ENV['REPORT_PATH']
+    ENV["REPORT_PATH"]
   end
 
   def results

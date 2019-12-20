@@ -12,6 +12,7 @@ jobs:
   test:
     name: Rspec Test Action
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
     - uses: actions/checkout@master
     - name: Set up Ruby 2.6

@@ -4,7 +4,7 @@ module Github
   class Client
     attr_reader :github_token, :user_agent
 
-    def initialize(github_token, user_agent: 'ruby')
+    def initialize(github_token, user_agent: "ruby")
       @github_token = github_token
       @user_agent = user_agent
     end
@@ -25,15 +25,15 @@ module Github
 
     def headers
       @headers ||= {
-        "Content-Type": 'application/json',
-        "Accept": 'application/vnd.github.antiope-preview+json',
+        "Content-Type": "application/json",
+        "Accept": "application/vnd.github.antiope-preview+json",
         "Authorization": "Bearer #{github_token}",
         "User-Agent": user_agent
       }
     end
 
     def request_http
-      http = Net::HTTP.new('api.github.com', 443)
+      http = Net::HTTP.new("api.github.com", 443)
       http.use_ssl = true
       response = yield(http)
       raise "#{response.message}: #{response.body}" if response.code.to_i >= 300

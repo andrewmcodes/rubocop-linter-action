@@ -37,6 +37,9 @@ Since GitHub Actions and the Checks API are continually changing, it is possible
 
 **Please view the [official documentation](https://rubocop-linter-action.readthedocs.io) for more detailed instructions**, including how to setup and use a configuration file to customize the action. Note that you can set the version for the documentation you are viewing in the bottom right.
 
+Currently this action does not work for **Pull Requests from a forked repository**.
+This is due to a limitation of the permissions of [GitHub Actions' GITHUB_TOKEN](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#permissions-for-the-github_token) and GitHub Checks. See [this issue](https://github.com/andrewmcodes/rubocop-linter-action/issues/68) for details.
+
 ### Quickstart
 
 Default usage, similar to running `gem install rubocop && rubocop` from your command line:

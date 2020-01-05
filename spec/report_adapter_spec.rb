@@ -3,8 +3,9 @@
 require "./spec/spec_helper"
 
 describe ReportAdapter do
-  let(:rubocop_report) { JSON(File.read("./spec/fixtures/report.json")) }
   subject { ReportAdapter }
+
+  let(:rubocop_report) { JSON(File.read("./spec/fixtures/report.json")) }
 
   context "when exit code is 0" do
     it "succeedes" do
@@ -34,12 +35,27 @@ describe ReportAdapter do
         "message" => "Missing magic comment `# frozen_string_literal: true`. [Style/FrozenStringLiteralComment]"
       )
     end
+
+    context "when the start_column is larger than the end_column" do
+      it "sets the end_column to the same value as start_column" do
+        result = subject.annotations(rubocop_report)
+        expect(result[1]).to eq(
+          "path" => "Gemfile",
+          "start_line" => 15,
+          "end_line" => 15,
+          "start_column" => 3,
+          "end_column" => 4,
+          "annotation_level" => "notice",
+          "message" => "Final newline missing. [Layout/TrailingBlankLines]"
+        )
+      end
+    end
   end
 
   context "when error is not on the same line" do
     it "does not have start and end column keys" do
       result = subject.annotations(rubocop_report)
-      expect(result[1]).to eq(
+      expect(result[2]).to eq(
         "path" => "Gemfile",
         "start_line" => 50,
         "end_line" => 65,

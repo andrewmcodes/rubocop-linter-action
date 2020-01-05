@@ -28,6 +28,21 @@
         },
         {
           "severity": "convention",
+          "message": "Final newline missing.",
+          "cop_name": "Layout/TrailingBlankLines",
+          "corrected": false,
+          "location" :{
+            "start_line": 15,
+            "start_column": 4,
+            "last_line": 15,
+            "last_column": 3,
+            "length": 0,
+            "line": 15,
+            "column": 4
+          }
+        },
+        {
+          "severity": "convention",
           "message": "Method has too many lines. [15/10]",
           "cop_name": "Metrics/MethodLength",
           "corrected": false,

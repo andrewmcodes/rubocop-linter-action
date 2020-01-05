@@ -44,10 +44,10 @@ class ReportAdapter
 
     def column_check(location)
       same_line = location["start_line"] == location["last_line"]
-      has_columns = location["start_column"] && location["end_column"]
+      has_columns = location["start_column"] && location["last_column"]
 
-      if same_line && has_columns && location["start_column"] < location["end_column"]
-        location["start_column"], location["end_column"] = location["end_column"], location["start_column"]
+      if same_line && has_columns && location["start_column"] > location["last_column"]
+        location["start_column"], location["last_column"] = location["last_column"], location["start_column"]
       end
 
       [location, same_line]

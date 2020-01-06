@@ -12,14 +12,13 @@ class Install
   def run
     return system("bundle install") if config.fetch("bundle", false)
 
-    system("gem install #{versions}")
+    system("gem install #{dependencies}")
   end
 
   private
 
-  def versions
-    gems = config.fetch("versions", DEFAULT_DEPENDENCIES)
-    dependencies = gems.map(&method(:dependency)).join(" ")
+  def dependencies
+    config.fetch("versions", DEFAULT_DEPENDENCIES).map(&method(:dependency)).join(" ")
   end
 
   def dependency(gem)

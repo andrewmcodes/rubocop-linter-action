@@ -1,10 +1,10 @@
-check_name: "Rubocop Results"
-rubocop_version: 'latest'
-rubocop_extensions:
-  - 'rubocop-rails'
-  - 'rubocop-performance': '1.5.1'
-  - 'rubocop-minitest': 'latest'
-  - 'rubocop-rspec': '1.37.0'
+check_name: 'Rubocop Results'
+versions:
+  - rubocop
+  - rubocop-rails
+  - rubocop-performance: '1.5.1'
+  - rubocop-minitest: 'latest'
+  - rubocop-rspec: '1.37.0'
 rubocop_config_path: '.rubocop.yml'
 rubocop_excluded_cops:
   - 'Style/FrozenStringLiteralComment'

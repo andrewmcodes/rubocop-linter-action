@@ -2,6 +2,7 @@
 
 class Install
   attr_reader :config
+
   def initialize(config)
     @config = config
   end
@@ -17,18 +18,11 @@ class Install
   def install_gems
     return system("bundle install") if config.fetch("bundle", false)
 
-    system("gem install #{rubocop} #{extensions}")
+    system("gem install #{versions}")
   end
 
-  def rubocop
-    version = config.fetch("rubocop_version", "latest")
-    return "rubocop" if version == "latest"
-
-    "rubocop:#{version}"
-  end
-
-  def extensions
-    extensions = config.fetch("rubocop_extensions", [])
+  def versions
+    extensions = config.fetch("versions", [])
     command = []
     extensions.each do |gem|
       if gem.is_a? String

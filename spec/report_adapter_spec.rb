@@ -3,7 +3,7 @@
 require "./spec/spec_helper"
 
 describe ReportAdapter do
-  subject { ReportAdapter }
+  subject { described_class }
 
   let(:rubocop_report) { JSON(File.read("./spec/fixtures/report.json")) }
 

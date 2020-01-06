@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Install
+  DEFAULT_DEPENDENCIES = %w[rubocop].freeze
+
   attr_reader :config
 
   def initialize(config)
@@ -16,7 +18,7 @@ class Install
   private
 
   def versions
-    gems = config.fetch("versions", %w[rubocop])
+    gems = config.fetch("versions", DEFAULT_DEPENDENCIES)
     dependencies = gems.map(&method(:dependency)).join(" ")
   end
 

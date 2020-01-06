@@ -22,17 +22,17 @@ class Install
   end
 
   def versions
-    extensions = config.fetch("versions", [])
-    command = []
-    extensions.each do |gem|
-      if gem.is_a? String
-        command << gem
-      else
-        gem_name = gem.keys.first
-        gem_version = gem.values.first
-        command << "#{gem_name}#{gem_version == 'latest' ? '' : ":#{gem_version}"}"
-      end
+    gems = config.fetch("versions", [])
+    dependencies = gems.map(&method(:dependency)).join(" ")
+  end
+
+  def dependency(gem)
+    case gem
+    when Hash
+      name, version = gem.first
+      version == "latest" ? name : "#{name}:#{version}"
+    else
+      gem
     end
-    command.join(" ")
   end
 end

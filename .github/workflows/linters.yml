@@ -10,7 +10,7 @@ on:
 
 jobs:
   rubocop:
-    name: Ruocop Action
+    name: RuboCop Action
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:

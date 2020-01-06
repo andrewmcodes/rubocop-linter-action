@@ -10,22 +10,20 @@ We use a configuration file to configure the action. This allows us to have a ve
 # Description: The name of the check that will be created.
 # Valid Options: A reasonably sized string.
 # Default: 'Rubocop Action'
-check_name: "Rubocop Results"
+check_name: 'Rubocop Results'
 
-# Description: Version of rubocop that will be installed.
-# Valid options: 'latest' or a version number like '0.75.0'.
-# Default: 'latest'
-rubocop_version: 'latest'
-
-# Description: Extensions required to run your rubocop config.
-# Valid options: Any rubocop extension, by default the latest gem version will be used. You can explicitly state that
-# (not required) or use a version number like '1.5.1'.
-# Default: nil
-rubocop_extensions:
-  - 'rubocop-rails'
-  - 'rubocop-performance': '1.5.1'
-  - 'rubocop-minitest': 'latest'
-  - 'rubocop-rspec': '1.37.0'
+# Description: Versions required to run your RuboCop checks.
+# Valid options: RuboCop and any RuboCop extension, by default the latest gem version will be used. You can explicitly state that
+# (not required) or use a version number, like '1.5.1'.
+# Default:
+#   versions:
+#     - rubocop: 'latest'
+versions:
+  - rubocop
+  - rubocop-rails
+  - rubocop-minitest
+  - rubocop-performance: '1.5.1'
+  - rubocop-rspec: '1.37.0'
 
 # Description: Rubocop configuration file path relative to the workspace.
 # Valid options: A valid file path inside of the workspace.
@@ -49,7 +47,7 @@ rubocop_fail_level: 'warning'
 
 # Instead of installing gems from rubygems, we can run `bundle install` on your project,
 # you would need to do this if you are using something like 'rubocop-github' or if you don't
-# want to list out extensions with the `rubocop_extensions` key.
+# want to list out dependencies with the `versions` key.
 # Valid options: true || false
 # Default: false
 bundle: false
@@ -66,12 +64,11 @@ check_scope: 'modified'
 ```yml
 # .github/config/rubocop_linter_action.yml
 
-rubocop_version: 'latest'
-rubocop_extensions:
-  - 'rubocop-rails'
-  - 'rubocop-performance': '1.5.1'
-  - 'rubocop-minitest': 'latest'
-  - 'rubocop-rspec': '1.37.0'
+versions:
+  - rubocop-rails
+  - rubocop-performance: '1.5.1'
+  - rubocop-minitest: 'latest'
+  - rubocop-rspec: '1.37.0'
 ```
 
 

@@ -4,25 +4,19 @@ class Install
   attr_reader :config
 
   def initialize(config)
-    @config = config
+    @config = Hash(config)
   end
 
   def run
-    return system("gem install rubocop") unless config
-
-    install_gems
-  end
-
-  private
-
-  def install_gems
     return system("bundle install") if config.fetch("bundle", false)
 
     system("gem install #{versions}")
   end
 
+  private
+
   def versions
-    gems = config.fetch("versions", [])
+    gems = config.fetch("versions", %w[rubocop])
     dependencies = gems.map(&method(:dependency)).join(" ")
   end
 

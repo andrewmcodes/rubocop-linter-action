@@ -18,6 +18,16 @@ describe Install do
       it { expect(subject).to have_received(:system).with("gem install rubocop") }
     end
 
+    context "when it's set to resolve dependencies through bundler" do
+      let(:config_file) do
+        <<~YAML
+          bundle: true
+        YAML
+      end
+
+      it { expect(subject).to have_received(:system).with("bundle install") }
+    end
+
     context "when there's no version specified" do
       let(:config_file) do
         <<~YAML

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Install
-  DEFAULT_DEPENDENCIES = %w[rubocop].freeze
+  DEFAULT_DEPENDENCIES = {
+    "rubocop" => "latest"
+  }.freeze
 
   attr_reader :config
 
@@ -18,16 +20,23 @@ class Install
   private
 
   def dependencies
-    config.fetch("versions", DEFAULT_DEPENDENCIES).map(&method(:dependency)).join(" ")
+    DEFAULT_DEPENDENCIES.merge(custom_dependencies).map(&method(:version_string)).join(" ")
   end
 
-  def dependency(gem)
-    case gem
+  def custom_dependencies
+    Hash[config.fetch("versions", []).map(&method(:version))]
+  end
+
+  def version(dependency)
+    case dependency
     when Hash
-      name, version = gem.first
-      version == "latest" ? name : "#{name}:#{version}"
+      dependency.first
     else
-      gem
+      [dependency, "latest"]
     end
+  end
+
+  def version_string(dependency, version)
+    version == "latest" ? dependency : "#{dependency}:#{version}"
   end
 end

@@ -43,13 +43,13 @@ describe Install do
       let(:config_file) do
         <<~YAML
           versions:
-            - rubocop: latest
+            - rubocop: 0.79.0
             - rubocop-rails
-            - rubocop-rspec: 1.37.0
+            - rubocop-rspec: latest
         YAML
       end
 
-      it { expect(subject).to have_received(:system).with("gem install rubocop rubocop-rails rubocop-rspec:1.37.0") }
+      it { expect(subject).to have_received(:system).with("gem install rubocop:0.79.0 rubocop-rails rubocop-rspec") }
 
       context "when 'rubocop' is not included in the dependencies" do
         let(:config_file) do

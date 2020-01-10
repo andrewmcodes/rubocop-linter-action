@@ -10,7 +10,7 @@ class Util
     end
 
     def read_yaml(path)
-      YAML.safe_load(File.read(path))
+      YAML.load(File.read(path))
     rescue Errno::ENOENT
       p "Warning: Missing file: #{path}"
       {}

@@ -6,11 +6,11 @@ class Configuration
 
   def initialize(workspace)
     @workspace = workspace
-    `pwd`
-    `ls`
   end
 
   def build
+    puts system("pwd")
+    puts system("ls")
     Util.read_yaml("#{workspace}/#{config_path}")
   end
 

@@ -6,6 +6,8 @@ class Configuration
 
   def initialize(workspace)
     @workspace = workspace
+    `pwd`
+    `ls`
   end
 
   def build

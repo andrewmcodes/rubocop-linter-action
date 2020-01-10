@@ -9,8 +9,8 @@ class Configuration
   end
 
   def build
-    puts system("pwd")
-    puts system("ls")
+    `pwd`
+    `ls`
     Util.read_yaml("#{workspace}/#{config_path}")
   end
 

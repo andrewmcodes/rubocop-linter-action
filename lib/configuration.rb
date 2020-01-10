@@ -9,8 +9,7 @@ class Configuration
   end
 
   def build
-    puts `pwd`
-    puts `ls`
+    puts `ls -a -R .github`
     Util.read_yaml("#{workspace}/#{config_path}")
   end
 

@@ -9,7 +9,8 @@ class Configuration
   end
 
   def build
-    puts `ls -a -R .github`
+    puts `ls -a  /github/workspace/.github/config`
+    puts `#{workspace}/#{config_path}`
     Util.read_yaml("#{workspace}/#{config_path}")
   end
 

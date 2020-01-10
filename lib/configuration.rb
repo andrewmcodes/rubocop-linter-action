@@ -9,12 +9,12 @@ class Configuration
   end
 
   def build
-    Util.read_yaml(config_path)
+    Util.read_yaml("#{workspace}/#{config_path}")
   end
 
   private
 
   def config_path
-    "#{workspace}/#{ENV['INPUT_ACTION_CONFIG_PATH'] || DEFAULT_CONFIG_PATH}"
+    ENV['INPUT_ACTION_CONFIG_PATH'] || DEFAULT_CONFIG_PATH
   end
 end

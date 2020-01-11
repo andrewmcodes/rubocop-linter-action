@@ -2,6 +2,7 @@
 
 module Github
   class CheckRunService
+    SLICE_COUNT = 48
     attr_reader :report, :github_data, :report_adapter, :check_name, :results
 
     def initialize(report: nil, github_data: nil, report_adapter: nil, check_name: nil)
@@ -12,28 +13,43 @@ module Github
     end
 
     def run
-      id = create_check["id"]
+      id, started_at = create_check
       @results = report.build
-      update_check(id)
+      update_check(id, started_at)
+      complete_check(id, started_at)
     end
 
     private
 
     def create_check
-      client.post(
-        endpoint_url,
-        create_check_payload
+      check = client.send_request(
+        url: endpoint_url,
+        method: "post",
+        body: create_check_payload
       )
+      puts "Check run created with id: #{check['id']}."
+      [check["id"], check["started_at"]]
     end
 
-    def update_check(id, last_result = nil)
-      annotations.each_slice(48) do |annotations_slice|
-        last_result = client.patch(
-          "#{endpoint_url}/#{id}",
-          update_check_payload(annotations_slice)
+    def update_check(id, started_at)
+      annotations.each_slice(SLICE_COUNT) do |annotations_slice|
+        client.send_request(
+          url: "#{endpoint_url}/#{id}",
+          method: "patch",
+          body: update_check_payload(annotations_slice, started_at)
         )
+        puts "Updated check run with #{annotations_slice.count} annotations."
       end
-      last_result
+    end
+
+    def complete_check(id, started_at)
+      request = client.send_request(
+        url: "#{endpoint_url}/#{id}",
+        method: "patch",
+        body: completed_check_payload(started_at)
+      )
+      puts "Completed check run."
+      request
     end
 
     def client
@@ -60,8 +76,7 @@ module Github
       {
         name: check_name,
         head_sha: github_data.sha,
-        status: status,
-        started_at: Time.now.iso8601
+        status: status
       }
     end
 
@@ -69,9 +84,17 @@ module Github
       base_payload("in_progress")
     end
 
-    def update_check_payload(annotations)
+    def completed_check_payload(started_at)
       base_payload("completed").merge!(
         conclusion: conclusion,
+        started_at: started_at,
+        completed_at: Time.now.iso8601
+      )
+    end
+
+    def update_check_payload(annotations, started_at)
+      base_payload("in_progress").merge!(
+        started_at: started_at,
         output: {
           title: check_name,
           summary: summary,

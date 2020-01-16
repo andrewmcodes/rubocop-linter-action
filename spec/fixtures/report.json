@@ -1,9 +1,9 @@
 {
   "__exit_code": 1,
   "metadata": {
-    "rubocop_version": "0.75.1",
+    "rubocop_version": "0.79.0",
     "ruby_engine": "ruby",
-    "ruby_version": "2.6.3",
+    "ruby_version": "2.7.0",
     "ruby_patchlevel": "62",
     "ruby_platform": "x86_64-linux"
   },

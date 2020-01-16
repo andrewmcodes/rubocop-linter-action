@@ -10,10 +10,10 @@ jobs:
     timeout-minutes: 4
     steps:
     - uses: actions/checkout@master
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - name: Set up Ruby 2.7
+      uses: eregon/use-ruby-action@master
       with:
-        ruby-version: 2.6.x
+        ruby-version: 2.7
     - uses: actions/cache@v1.0.3
       with:
         path: vendor/bundle

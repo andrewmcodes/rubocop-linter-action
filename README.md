@@ -14,7 +14,7 @@
 
 ![Rubocop Linter Action][logo]
 
-![Version Number](https://img.shields.io/static/v1?label=Version&message=v3.0.0.rc3&color=blue)
+![Version Number](https://img.shields.io/static/v1?label=Version&message=v3.0.0.rc4&color=blue)
 ![Linters](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Linters/badge.svg)
 ![Tests](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Test/badge.svg)
 [![Changelog](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Changelog/badge.svg)][changelog]
@@ -47,7 +47,7 @@ Default usage, similar to running `gem install rubocop && rubocop` from your com
 
 ```yaml
 - name: Rubocop Linter Action
-  uses: andrewmcodes/rubocop-linter-action@v3.0.0.rc3
+  uses: andrewmcodes/rubocop-linter-action@v3.0.0.rc4
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```

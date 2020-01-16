@@ -4,8 +4,8 @@
     "rubocop_version": "0.79.0",
     "ruby_engine": "ruby",
     "ruby_version": "2.7.0",
-    "ruby_patchlevel": "62",
-    "ruby_platform": "x86_64-linux"
+    "ruby_patchlevel": "0",
+    "ruby_platform": "x86_64-darwin19"
   },
   "files": [
     {
@@ -74,7 +74,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [98/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 55,
@@ -104,7 +104,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [130/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 58,
@@ -154,7 +154,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [90/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 2,
@@ -324,7 +324,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [83/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 31,
@@ -339,7 +339,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [83/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 45,
@@ -354,7 +354,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [87/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 59,
@@ -414,7 +414,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [88/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 70,
@@ -1584,7 +1584,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [82/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 14,
@@ -1659,7 +1659,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [97/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 2,
@@ -1674,7 +1674,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [85/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 4,
@@ -1689,7 +1689,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [86/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 32,
@@ -1724,7 +1724,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [97/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 2,
@@ -1739,7 +1739,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [85/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 4,
@@ -1754,7 +1754,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [87/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 19,
@@ -1769,7 +1769,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [97/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 20,
@@ -1784,7 +1784,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [102/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 34,
@@ -1799,7 +1799,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [86/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 43,
@@ -1814,7 +1814,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [96/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 49,
@@ -1829,7 +1829,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [96/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 51,
@@ -1874,7 +1874,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [83/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 64,
@@ -1889,7 +1889,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [100/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 71,
@@ -1904,7 +1904,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [83/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 86,
@@ -1954,7 +1954,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [85/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 2,
@@ -2029,7 +2029,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [107/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 3,
@@ -2044,7 +2044,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [112/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 6,
@@ -2079,7 +2079,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [107/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 20,
@@ -2194,7 +2194,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [96/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 6,
@@ -2244,7 +2244,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [85/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 10,
@@ -2449,7 +2449,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [81/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 3,
@@ -2464,7 +2464,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [86/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 8,
@@ -2479,7 +2479,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [86/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 11,
@@ -2664,7 +2664,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [103/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 1,
@@ -2679,7 +2679,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [111/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 2,
@@ -2694,7 +2694,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [81/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 6,
@@ -2854,7 +2854,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [85/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 37,
@@ -3294,7 +3294,7 @@
         {
           "severity": "convention",
           "message": "Line is too long. [82/80]",
-          "cop_name": "Metrics/LineLength",
+          "cop_name": "Layout/LineLength",
           "corrected": false,
           "location": {
             "start_line": 6,

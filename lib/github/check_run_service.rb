@@ -13,8 +13,8 @@ module Github
     end
 
     def run
-      id, started_at = create_check
       @results = report.build
+      id, started_at = create_check
       update_check(id, started_at)
       complete_check(id, started_at)
     end

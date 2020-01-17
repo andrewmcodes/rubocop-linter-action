@@ -9,7 +9,6 @@ class Command
 
   def build
     return base_command unless config
-    puts "#{rubocop_check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}"
     "#{rubocop_check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
   end
 
@@ -20,10 +19,7 @@ class Command
   end
 
   def rubocop_check_scope
-    puts "check scope"
     scope = config.fetch("rubocop_check_scope", "all")
-    puts scope
-    puts config.keys
     return "git diff -- origin/master --name-only --diff-filter=AM | xargs" if scope == "modified"
   end
 

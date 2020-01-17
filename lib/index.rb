@@ -47,10 +47,12 @@ class RubocopLinterAction
   end
 
   def report
+    puts command
     Report.new(github_data, command)
   end
 
   def run_check_run_service
+    puts report
     Github::CheckRunService.new(
       report: report,
       github_data: github_data,

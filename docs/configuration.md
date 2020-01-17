@@ -56,7 +56,7 @@ bundle: false
 # or not equal to 'modified', Rubocop is run against the entire codebase.
 # Valid options: 'modified'
 # Default: nil
-check_scope: 'modified'
+rubocop_check_scope: 'modified'
 ```
 
 ## Example

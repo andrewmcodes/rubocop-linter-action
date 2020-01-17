@@ -9,8 +9,8 @@ class Command
 
   def build
     return base_command unless config
-    puts "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}"
-    "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
+    puts "#{rubocop_check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}"
+    "#{rubocop_check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
   end
 
   private
@@ -19,9 +19,9 @@ class Command
     "rubocop --parallel -f json"
   end
 
-  def check_scope
+  def rubocop_check_scope
     puts "check scope"
-    scope = config.fetch("check_scope", "all")
+    scope = config.fetch("rubocop_check_scope", "all")
     puts scope
     puts config.keys
     return "git diff origin/master --name-only --diff-filter=AM | xargs" if scope == "modified"

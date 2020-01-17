@@ -10,4 +10,4 @@ rubocop_excluded_cops:
   - 'Style/FrozenStringLiteralComment'
 rubocop_fail_level: 'error'
 bundle: false
-check_scope: 'modified'
+rubocop_check_scope: 'modified'

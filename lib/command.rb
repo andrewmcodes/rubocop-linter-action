@@ -20,7 +20,7 @@ class Command
 
   def rubocop_check_scope
     scope = config.fetch("rubocop_check_scope", "all")
-    return "git diff -- origin/master --name-only --diff-filter=AM | xargs" if scope == "modified"
+    return "git diff origin/master --name-only --diff-filter=AM | xargs" if scope == "modified"
   end
 
   def rubocop_config

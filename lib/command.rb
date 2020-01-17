@@ -23,6 +23,7 @@ class Command
     puts "check scope"
     scope = config.fetch("check_scope", "all")
     puts scope
+    puts config.keys
     return "git diff origin/master --name-only --diff-filter=AM | xargs" if scope == "modified"
   end
 

@@ -1,13 +1,16 @@
 # typed: true
 module Github
   class Client
+    sig { returns(T.untyped) }
     attr_reader :github_token, :user_agent
 
+    sig { params(github_token: T.untyped, user_agent: T.untyped).returns(T.untyped) }
     def initialize(github_token, user_agent: "ruby")
       @github_token = github_token
       @user_agent = user_agent
     end
 
+    sig { params(url: T.untyped, method: T.untyped, body: T.untyped, cancel_request: T.untyped).returns(T.untyped) }
     def send_request(url: "", method: "patch", body: {}, cancel_request: false)
       response = request_http do |http|
         if method == "patch"
@@ -24,6 +27,7 @@ module Github
 
     private
 
+    sig { returns(T.untyped) }
     def headers
       @headers ||= {
         "Content-Type": "application/json",
@@ -33,12 +37,14 @@ module Github
       }
     end
 
+    sig { returns(T.untyped) }
     def request_http
       http = Net::HTTP.new("api.github.com", 443)
       http.use_ssl = true
       yield(http)
     end
 
+    sig { params(response: T.untyped, url: T.untyped).returns(T.untyped) }
     def message_handler(response: {}, url: nil)
       body = JSON.parse(response.body)
       # Patch requests should return 200, Post request should return 200
@@ -54,6 +60,7 @@ module Github
       )
     end
 
+    sig { params(name: T.untyped, head_sha: T.untyped).returns(T.untyped) }
     def cancel_suite_payload(name, head_sha)
       {
         name: name,

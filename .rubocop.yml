@@ -1,3 +1,6 @@
+require:
+  - rubocop-sorbet
+
 Metrics/MethodLength:
   Max: 16
 

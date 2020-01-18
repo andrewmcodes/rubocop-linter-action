@@ -20,4 +20,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-**Go [here](https://github.com/andrewmcodes/rubocop-linter-action-playground/blob/master/.github/workflows) to see more examples!**
+**Go [here](https://github.com/handcars/rubocop-linter-action-playground/blob/master/.github/workflows) to see more examples!**

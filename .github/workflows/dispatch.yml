@@ -14,6 +14,6 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.DISPATCH_ACCESS_TOKEN }}
-        repository: andrewmcodes/rubocop-linter-action-playground
+        repository: handcars/rubocop-linter-action-playground
         event-type: rubocop-linter-action-test
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "actor": "${{ github.actor }}"}'

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Report
   attr_reader :github_data, :command
 

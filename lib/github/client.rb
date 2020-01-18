@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Github
   class Client
     attr_reader :github_token, :user_agent

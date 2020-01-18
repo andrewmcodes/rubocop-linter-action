@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ReportAdapter
   class << self
     CONCLUSION_TYPES = { failure: "failure", success: "success" }.freeze

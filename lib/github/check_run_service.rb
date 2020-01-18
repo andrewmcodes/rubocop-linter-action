@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Github
   class CheckRunService
     SLICE_COUNT = 48

@@ -84,6 +84,10 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    sorbet (0.5.5265)
+      sorbet-static (= 0.5.5265)
+    sorbet-runtime (0.5.5265)
+    sorbet-static (0.5.5265-universal-darwin-14)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
@@ -105,6 +109,8 @@ DEPENDENCIES
   pry (~> 0.12.2)
   rspec (~> 3.9.0)
   rubocop (~> 0.79.0)
+  sorbet (~> 0.5)
+  sorbet-runtime (~> 0.5)
   webmock (~> 3.8)
 
 BUNDLED WITH

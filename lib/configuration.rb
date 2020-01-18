@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 class Configuration
-  DEFAULT_CONFIG_PATH = ".github/config/rubocop_linter_action.yml"
+  DEFAULT_CONFIG_PATH = ".github/config/rubocop_linter_action.yml".freeze
   attr_reader :workspace
 
   def initialize(workspace)

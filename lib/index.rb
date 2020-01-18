@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # requires ...................................................................
 require "net/http"
 require "json"

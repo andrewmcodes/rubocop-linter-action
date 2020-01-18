@@ -1,10 +1,10 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 
 group :development do
   gem "github_changelog_generator", "~> 1.15.0"
   gem "rubocop", "~> 0.79.0"
+  gem "sorbet", "~> 0.5"
+  gem "sorbet-runtime", "~> 0.5"
 end
 
 group :test do

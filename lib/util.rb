@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Util
   class << self
     def read_json(path)

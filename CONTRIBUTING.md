@@ -10,3 +10,5 @@ To lend a helping hand:
 * [Fork the repository](https://help.github.com/articles/fork-a-repo/)
 * Make your desired changes
 * [Create a pull request](https://help.github.com/articles/creating-a-pull-request/)
+
+Include `[ci skip]` in your commit message if the change does not change the code (e.g., documentation updates).

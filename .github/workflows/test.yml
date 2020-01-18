@@ -13,6 +13,7 @@ jobs:
     name: Rspec Test Action
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
     - uses: actions/checkout@master
     - name: Set up Ruby 2.7

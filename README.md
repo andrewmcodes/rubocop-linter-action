@@ -15,6 +15,7 @@
 ![Rubocop Linter Action][logo]
 
 ![Version Number](https://img.shields.io/static/v1?label=Version&message=v3.0.0.rc4&color=blue)
+[![CodeFactor](https://www.codefactor.io/repository/github/andrewmcodes/rubocop-linter-action/badge)](https://www.codefactor.io/repository/github/andrewmcodes/rubocop-linter-action)
 ![Linters](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Linters/badge.svg)
 ![Tests](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Test/badge.svg)
 [![Changelog](https://github.com/andrewmcodes/rubocop-linter-action/workflows/Changelog/badge.svg)][changelog]

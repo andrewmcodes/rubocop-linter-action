@@ -1,3 +1,4 @@
+# typed: true
 module Github
   class Client
     attr_reader :github_token, :user_agent

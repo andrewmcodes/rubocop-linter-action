@@ -1,3 +1,4 @@
+# typed: true
 module Github
   class CheckRunService
     SLICE_COUNT = 48

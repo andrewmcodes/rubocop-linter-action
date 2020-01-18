@@ -1,3 +1,4 @@
+# typed: true
 module Github
   class Data
     attr_reader :event

@@ -1,3 +1,4 @@
+# typed: true
 class Util
   class << self
     def read_json(path)

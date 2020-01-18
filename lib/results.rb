@@ -1,3 +1,4 @@
+# typed: true
 class Results
   attr_accessor :output, :status_code
   def initialize(command)

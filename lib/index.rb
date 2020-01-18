@@ -1,3 +1,4 @@
+# typed: true
 # requires ...................................................................
 require "net/http"
 require "json"

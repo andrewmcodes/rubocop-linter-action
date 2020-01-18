@@ -1,3 +1,4 @@
+# typed: strict
 # requires ...................................................................
 require "webmock/rspec"
 require "json"

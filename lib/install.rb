@@ -1,3 +1,4 @@
+# typed: true
 class Install
   DEFAULT_DEPENDENCIES = {
     "rubocop" => "latest"

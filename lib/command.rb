@@ -1,3 +1,4 @@
+# typed: true
 class Command
   attr_reader :config
 

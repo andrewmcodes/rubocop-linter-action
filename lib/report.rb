@@ -1,3 +1,4 @@
+# typed: true
 class Report
   attr_reader :github_data, :command
 

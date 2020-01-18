@@ -483,6 +483,22 @@ module WebMock::NetHTTPUtility
   def self.request_signature_from_request(net_http, request, body = nil); end
   def self.validate_headers(headers); end
 end
+class Command
+end
+class Configuration
+end
+module Github
+end
+class Github::CheckRunService
+end
+class Github::Client
+end
+class Github::Data
+end
+class ReportAdapter
+end
+class Util
+end
 class WebMock::RequestPatternMatcher
   def at_least_once; end
   def at_least_times(times); end

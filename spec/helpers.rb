@@ -1,4 +1,5 @@
-# typed: true
+# typed: ignore
+
 module Helpers
   sig { returns(T.untyped) }
   def event

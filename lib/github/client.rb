@@ -1,4 +1,5 @@
 # typed: true
+
 module Github
   class Client
     sig { returns(T.untyped) }

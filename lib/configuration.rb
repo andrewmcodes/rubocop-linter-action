@@ -1,4 +1,5 @@
-# typed: true
+# typed: ignore
+
 class Configuration
   DEFAULT_CONFIG_PATH = ".github/config/rubocop_linter_action.yml".freeze
   sig { returns(T.untyped) }

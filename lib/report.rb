@@ -1,4 +1,5 @@
-# typed: true
+# typed: ignore
+
 class Report
   sig { returns(T.untyped) }
   attr_reader :github_data, :command

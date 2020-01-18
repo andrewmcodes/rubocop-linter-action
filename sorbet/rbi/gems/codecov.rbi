@@ -17,3 +17,7 @@ class SimpleCov::Formatter::Codecov
   def result_to_codecov_messages(result); end
   def shortened_filename(file); end
 end
+class Command
+end
+module Helpers
+end

@@ -1,4 +1,5 @@
-# typed: true
+# typed: ignore
+
 class Command
   sig { returns(T.untyped) }
   attr_reader :config

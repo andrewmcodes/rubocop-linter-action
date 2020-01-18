@@ -1,4 +1,5 @@
 # typed: true
+
 class ReportAdapter
   class << self
     CONCLUSION_TYPES = { failure: "failure", success: "success" }.freeze

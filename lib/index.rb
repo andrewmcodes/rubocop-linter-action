@@ -1,7 +1,9 @@
-# typed: true
+# typed: ignore
+
 # requires ...................................................................
 require "net/http"
 require "json"
+require "sorbet-runtime"
 require "time"
 require "yaml"
 

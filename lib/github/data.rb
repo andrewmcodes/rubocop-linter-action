@@ -1,4 +1,5 @@
 # typed: true
+
 module Github
   class Data
     sig { returns(T.untyped) }

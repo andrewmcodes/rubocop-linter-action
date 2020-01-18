@@ -1,4 +1,5 @@
-# typed: true
+# typed: ignore
+
 class Results
   sig { params(output: T.untyped).returns(T.untyped) }
   attr_accessor :output, :status_code

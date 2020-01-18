@@ -1,7 +1,10 @@
-# typed: true
+# typed: strong
+
 class Util
   class << self
-    sig { params(path: T.untyped).returns(T.untyped) }
+    extend T::Sig
+
+    sig { params(path: String).returns(T::Hash[String, String]) }
     def read_json(path)
       JSON.parse(File.read(path))
     rescue Errno::ENOENT
@@ -9,7 +12,7 @@ class Util
       {}
     end
 
-    sig { params(path: T.untyped).returns(T.untyped) }
+    sig { params(path: String).returns(T::Hash[String, String]) }
     def read_yaml(path)
       YAML.safe_load(File.read(path))
     rescue Errno::ENOENT

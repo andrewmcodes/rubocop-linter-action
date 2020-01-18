@@ -1,6 +1,10 @@
 require:
   - rubocop-sorbet
 
+Sorbet:
+  Exclude:
+    - "bin/**"
+
 Metrics/MethodLength:
   Max: 16
 
@@ -12,7 +16,7 @@ Layout/LineLength:
 
 Metrics/BlockLength:
   Exclude:
-    - 'spec/**'
+    - "spec/**"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes

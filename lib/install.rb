@@ -1,4 +1,5 @@
-# typed: true
+# typed: ignore
+
 class Install
   DEFAULT_DEPENDENCIES = {
     "rubocop" => "latest"
@@ -41,7 +42,7 @@ class Install
     end
   end
 
-  sig { params(dependency: T.untyped, version: T.untyped).returns(T.untyped) }
+  sig { params(dependency: T.string, version: T.string).returns(T.string) }
   def version_string(dependency, version)
     version == "latest" ? dependency : "#{dependency}:#{version}"
   end

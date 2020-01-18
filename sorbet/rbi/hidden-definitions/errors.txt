@@ -6570,9 +6570,6 @@
 # wrong constant name initialize
 # wrong constant name relative_file_name
 # wrong constant name <static-init>
-# uninitialized constant RSpec::Core::ExampleGroup::BE_PREDICATE_REGEX
-# uninitialized constant RSpec::Core::ExampleGroup::DYNAMIC_MATCHER_REGEX
-# uninitialized constant RSpec::Core::ExampleGroup::HAS_REGEX
 # uninitialized constant RSpec::Core::ExampleGroup::NOT_YET_IMPLEMENTED
 # uninitialized constant RSpec::Core::ExampleGroup::NO_REASON_GIVEN
 # wrong constant name initialize
@@ -7000,210 +6997,14 @@
 # wrong constant name does_not_match?
 # wrong constant name matches?
 # wrong constant name <static-init>
-# wrong constant name <Class:AnyInstance>
-# wrong constant name <Class:ExpectChain>
-# wrong constant name <Class:MarshalExtension>
-# wrong constant name <Class:MessageChain>
-# wrong constant name <Class:StubChain>
-# wrong constant name <Class:Chain>
-# wrong constant name <Class:ErrorGenerator>
-# wrong constant name <Class:ExpectChainChain>
-# wrong constant name <Class:ExpectationChain>
-# wrong constant name <Class:FluentInterfaceProxy>
-# wrong constant name <Class:MessageChains>
-# wrong constant name <Class:PositiveExpectationChain>
-# wrong constant name <Class:Proxy>
-# wrong constant name <Class:Recorder>
-# wrong constant name <Class:StubChain>
-# wrong constant name <Class:StubChainChain>
-# wrong constant name <Class:Customizations>
-# wrong constant name constrained_to_any_of?
-# wrong constant name expectation_fulfilled!
-# wrong constant name initialize
-# wrong constant name matches_args?
-# wrong constant name never
-# wrong constant name playback!
-# wrong constant name and_call_original
-# wrong constant name and_raise
-# wrong constant name and_return
-# wrong constant name and_throw
-# wrong constant name and_wrap_original
-# wrong constant name and_yield
-# wrong constant name at_least
-# wrong constant name at_most
-# wrong constant name exactly
-# wrong constant name never
-# wrong constant name once
-# wrong constant name thrice
-# wrong constant name time
-# wrong constant name times
-# wrong constant name twice
-# wrong constant name with
-# wrong constant name <static-init>
-# wrong constant name record
-# wrong constant name <static-init>
-# wrong constant name raise_does_not_implement_error
-# wrong constant name raise_message_already_received_by_other_instance_error
-# wrong constant name raise_not_supported_with_prepend_error
-# wrong constant name raise_second_instance_received_message_error
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Mocks::AnyInstance::ExpectChainChain::EmptyInvocationOrder
-# uninitialized constant RSpec::Mocks::AnyInstance::ExpectChainChain::InvocationOrder
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name expectation_fulfilled?
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name initialize
-# wrong constant name method_missing
-# wrong constant name <static-init>
-# wrong constant name []
-# wrong constant name add
-# wrong constant name all_expectations_fulfilled?
-# wrong constant name each_unfulfilled_expectation_matching
-# wrong constant name has_expectation?
-# wrong constant name playback!
-# wrong constant name received_expected_message!
-# wrong constant name remove_stub_chains_for!
-# wrong constant name unfulfilled_expectations
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name expect_chain
-# wrong constant name initialize
-# wrong constant name klass
-# wrong constant name should_not_receive
-# wrong constant name should_receive
-# wrong constant name stub
-# wrong constant name stub_chain
-# wrong constant name unstub
-# wrong constant name <static-init>
-# wrong constant name already_observing?
-# wrong constant name build_alias_method_name
-# wrong constant name expect_chain
-# wrong constant name initialize
-# wrong constant name instance_that_received
-# wrong constant name klass
-# wrong constant name message_chains
-# wrong constant name notify_received_message
-# wrong constant name playback!
-# wrong constant name should_not_receive
-# wrong constant name should_receive
-# wrong constant name stop_all_observation!
-# wrong constant name stop_observing!
-# wrong constant name stub
-# wrong constant name stub_chain
-# wrong constant name stubs
-# wrong constant name unstub
-# wrong constant name verify
-# wrong constant name <static-init>
-# wrong constant name expectation_fulfilled?
-# wrong constant name <static-init>
-# uninitialized constant RSpec::Mocks::AnyInstance::StubChainChain::EmptyInvocationOrder
-# uninitialized constant RSpec::Mocks::AnyInstance::StubChainChain::InvocationOrder
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name error_generator
-# wrong constant name <static-init>
-# wrong constant name expect_chain_on
-# wrong constant name <static-init>
-# wrong constant name patch!
-# wrong constant name unpatch!
-# wrong constant name at_least
-# wrong constant name at_most
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name exactly
-# wrong constant name failure_message
-# wrong constant name failure_message_when_negated
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name name
-# wrong constant name once
-# wrong constant name ordered
-# wrong constant name setup_allowance
-# wrong constant name setup_any_instance_allowance
-# wrong constant name setup_any_instance_expectation
-# wrong constant name setup_any_instance_negative_expectation
-# wrong constant name setup_expectation
-# wrong constant name setup_negative_expectation
-# wrong constant name thrice
-# wrong constant name time
-# wrong constant name times
-# wrong constant name twice
-# wrong constant name with
-# wrong constant name <static-init>
-# wrong constant name <Class:DefaultDescribable>
-# wrong constant name and_call_original
-# wrong constant name and_raise
-# wrong constant name and_return
-# wrong constant name and_throw
-# wrong constant name and_wrap_original
-# wrong constant name and_yield
-# wrong constant name at_least
-# wrong constant name at_most
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name exactly
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name name
-# wrong constant name never
-# wrong constant name once
-# wrong constant name ordered
-# wrong constant name setup_allowance
-# wrong constant name setup_any_instance_allowance
-# wrong constant name setup_any_instance_expectation
-# wrong constant name setup_any_instance_negative_expectation
-# wrong constant name setup_expectation
-# wrong constant name setup_negative_expectation
-# wrong constant name thrice
-# wrong constant name time
-# wrong constant name times
-# wrong constant name twice
-# wrong constant name with
-# wrong constant name description_for
-# wrong constant name initialize
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name and_call_original
-# wrong constant name and_raise
-# wrong constant name and_return
-# wrong constant name and_throw
-# wrong constant name and_yield
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name name
-# wrong constant name setup_allowance
-# wrong constant name setup_any_instance_allowance
-# wrong constant name setup_any_instance_expectation
-# wrong constant name setup_expectation
-# wrong constant name setup_negative_expectation
-# wrong constant name with
-# wrong constant name <static-init>
-# wrong constant name description
-# wrong constant name does_not_match?
-# wrong constant name initialize
-# wrong constant name matches?
-# wrong constant name name
-# wrong constant name setup_allowance
-# wrong constant name setup_any_instance_allowance
-# wrong constant name setup_any_instance_expectation
-# wrong constant name setup_expectation
-# wrong constant name setup_negative_expectation
-# wrong constant name warn_about_block
-# wrong constant name <static-init>
-# wrong constant name block
-# wrong constant name chain
-# wrong constant name initialize
-# wrong constant name object
-# wrong constant name setup_chain
-# wrong constant name <static-init>
-# wrong constant name <static-init>
-# wrong constant name stub_chain_on
+# wrong constant name <Class:BlockSignature>
 # wrong constant name <Class:Differ>
+# wrong constant name <Class:LooseSignatureVerifier>
+# wrong constant name <Class:MethodSignature>
+# wrong constant name <Class:MethodSignatureExpectation>
+# wrong constant name <Class:MethodSignatureVerifier>
+# uninitialized constant RSpec::Support::BlockSignature::INFINITY
+# wrong constant name <static-init>
 # undefined method `initialize<defaultArg>1' for class `RSpec::Support::Differ'
 # Did you mean?  initialize_dup
 # wrong constant name color?
@@ -7212,6 +7013,60 @@
 # wrong constant name diff_as_string
 # wrong constant name initialize<defaultArg>1
 # wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name <Class:SignatureWithKeywordArgumentsMatcher>
+# wrong constant name has_kw_args_in?
+# wrong constant name initialize
+# wrong constant name invalid_kw_args_from
+# wrong constant name missing_kw_args_from
+# wrong constant name non_kw_args_arity_description
+# wrong constant name valid_non_kw_args?
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# undefined method `classify_arity<defaultArg>1' for class `RSpec::Support::MethodSignature'
+# undefined method `valid_non_kw_args?<defaultArg>1' for class `RSpec::Support::MethodSignature'
+# wrong constant name arbitrary_kw_args?
+# wrong constant name classify_arity<defaultArg>1
+# wrong constant name classify_arity
+# wrong constant name classify_parameters
+# wrong constant name could_contain_kw_args?
+# wrong constant name description
+# wrong constant name has_kw_args_in?
+# wrong constant name initialize
+# wrong constant name invalid_kw_args_from
+# wrong constant name max_non_kw_args
+# wrong constant name min_non_kw_args
+# wrong constant name missing_kw_args_from
+# wrong constant name non_kw_args_arity_description
+# wrong constant name optional_kw_args
+# wrong constant name required_kw_args
+# wrong constant name unlimited_args?
+# wrong constant name valid_non_kw_args?<defaultArg>1
+# wrong constant name valid_non_kw_args?
+# wrong constant name <static-init>
+# wrong constant name empty?
+# wrong constant name expect_arbitrary_keywords
+# wrong constant name expect_arbitrary_keywords=
+# wrong constant name expect_unlimited_arguments
+# wrong constant name expect_unlimited_arguments=
+# wrong constant name keywords
+# wrong constant name keywords=
+# wrong constant name max_count
+# wrong constant name max_count=
+# wrong constant name min_count
+# wrong constant name min_count=
+# wrong constant name <static-init>
+# undefined method `initialize<defaultArg>1' for class `RSpec::Support::MethodSignatureVerifier'
+# Did you mean?  initialize_dup
+# wrong constant name error_message
+# wrong constant name initialize<defaultArg>1
+# wrong constant name initialize
+# wrong constant name kw_args
+# wrong constant name max_non_kw_args
+# wrong constant name min_non_kw_args
+# wrong constant name non_kw_args
+# wrong constant name valid?
+# wrong constant name with_expectation
 # wrong constant name <static-init>
 # wrong constant name <Class:CparseParams>
 # wrong constant name <static-init>
@@ -7999,6 +7854,13 @@
 # uninitialized constant RuboCop::Cop::Security::MarshalLoad::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Security::Open::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Security::YAMLLoad::LITERAL_REGEX
+# uninitialized constant RuboCop::Cop::Sorbet::EnforceSigilOrder::LITERAL_REGEX
+# uninitialized constant RuboCop::Cop::Sorbet::EnforceSigilOrder::SIGIL_REGEX
+# uninitialized constant RuboCop::Cop::Sorbet::EnforceSigilOrder::STRICTNESS_LEVELS
+# uninitialized constant RuboCop::Cop::Sorbet::ForbidIncludeConstLiteral::LITERAL_REGEX
+# uninitialized constant RuboCop::Cop::Sorbet::ForbidSuperclassConstLiteral::LITERAL_REGEX
+# uninitialized constant RuboCop::Cop::Sorbet::SignatureBuildOrder::LITERAL_REGEX
+# uninitialized constant RuboCop::Cop::Sorbet::ValidSigil::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::SpaceBeforePunctuation::BYTE_ORDER_MARK
 # uninitialized constant RuboCop::Cop::Style::AccessModifierDeclarations::LITERAL_REGEX
 # uninitialized constant RuboCop::Cop::Style::Alias::LITERAL_REGEX

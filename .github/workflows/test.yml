@@ -33,3 +33,14 @@ jobs:
         bundle install --jobs 4 --retry 3
     - name: Run Rspec
       run: bin/rspec
+      with:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        yml: ./codecov.yml
+        fail_ci_if_error: true

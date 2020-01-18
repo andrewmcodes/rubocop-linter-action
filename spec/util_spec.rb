@@ -23,11 +23,11 @@ describe Util do
 
   context "path does exist" do
     it "#read_json" do
-      expect(subject.read_json("./spec/fixtures/example.json")).to eq({"example" => "json"})
+      expect(subject.read_json("./spec/fixtures/example.json")).to eq("example" => "json")
     end
 
     it "#read_yaml" do
-      expect(subject.read_yaml("./spec/fixtures/example.yml")).to eq({"example" => "yaml"})
+      expect(subject.read_yaml("./spec/fixtures/example.yml")).to eq("example" => "yaml")
     end
   end
 end

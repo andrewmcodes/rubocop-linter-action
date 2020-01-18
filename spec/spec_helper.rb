@@ -10,8 +10,10 @@ require "simplecov"
 require "codecov"
 
 # tools ......................................................................
-SimpleCov.start
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+unless ENV["CODECOV_TOKEN"].to_s.empty?
+  SimpleCov.start
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 # require relatives ..........................................................
 require_relative "./../lib/command"

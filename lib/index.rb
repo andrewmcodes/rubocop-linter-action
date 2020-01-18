@@ -24,6 +24,9 @@ class RubocopLinterAction
   end
 
   def run
+    x = Util.read_json(ENV["GITHUB_EVENT_PATH"])
+    puts x
+    puts x.is_a? Hash
     install_gems
     run_check_run_service
   end

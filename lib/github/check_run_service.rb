@@ -5,28 +5,37 @@ module Github
     extend T::Sig
 
     SLICE_COUNT = 48
-    sig { returns(T.untyped) }
-    attr_reader :report, :github_data, :report_adapter, :check_name, :results
 
-    sig { params(report: T.untyped, github_data: T.untyped, report_adapter: T.untyped, check_name: T.untyped).returns(T.untyped) }
-    def initialize(report: nil, github_data: nil, report_adapter: nil, check_name: nil)
-      @report = report
+    # sig { returns(T.nilable(String)) }
+    sig { returns(Github::Data) }
+    attr_accessor :github_data
+    sig { returns(ReportAdapter) }
+    attr_accessor :report_adapter
+    sig { returns(T::Hash[String, String]) }
+    attr_accessor :results
+    sig { returns(String) }
+    attr_accessor :check_name
+
+    sig { params(results: T::Hash[String, String], github_data: Github::Data, check_name: String).void }
+    def initialize(results:, github_data:, check_name:)
       @github_data = github_data
-      @report_adapter = report_adapter
+      @report_adapter = ReportAdapter
       @check_name = check_name
+      @results = results
     end
 
     sig { returns(T.untyped) }
     def run
-      @results = report.build
       id, started_at = create_check
+      return unless id && started_at
+
       update_check(id, started_at)
       complete_check(id, started_at)
     end
 
     private
 
-    sig { returns(T.untyped) }
+    sig { returns(T::Array[T.nilable(String)]) }
     def create_check
       check = client.send_request(
         url: endpoint_url,
@@ -37,7 +46,7 @@ module Github
       [check["id"], check["started_at"]]
     end
 
-    sig { params(id: T.untyped, started_at: T.untyped).returns(T.untyped) }
+    sig { params(id: String, started_at: String).returns(T::Boolean) }
     def update_check(id, started_at)
       annotations.each_slice(SLICE_COUNT) do |annotations_slice|
         client.send_request(
@@ -47,30 +56,31 @@ module Github
         )
         puts "Updated check run with #{annotations_slice.count} annotations."
       end
+      true
     end
 
-    sig { params(id: T.untyped, started_at: T.untyped).returns(T.untyped) }
+    sig { params(id: String, started_at: String).returns(T::Boolean) }
     def complete_check(id, started_at)
-      request = client.send_request(
+      client.send_request(
         url: "#{endpoint_url}/#{id}",
         method: "patch",
         body: completed_check_payload(started_at)
       )
       puts "Completed check run."
-      request
+      true
     end
 
-    sig { returns(T.untyped) }
+    sig { returns(Github::Client) }
     def client
       @client ||= Github::Client.new(github_data.token, user_agent: "rubocop-linter-action")
     end
 
-    sig { returns(T.untyped) }
+    sig { returns(String) }
     def summary
       report_adapter.summary(results)
     end
 
-    sig { returns(T.untyped) }
+    sig { returns(T::Array[T::Hash[String, String]]) }
     def annotations
       report_adapter.annotations(results)
     end

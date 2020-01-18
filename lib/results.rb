@@ -3,16 +3,19 @@
 class Results
   extend T::Sig
 
-  sig { returns(String) }
-  attr_accessor :output, :status_code
+  sig { returns(T.nilable(String)) }
+  attr_accessor :output
+
+  sig { returns(T.nilable(String)) }
+  attr_accessor :status_code
 
   sig { params(command: String).void }
   def initialize(command)
     @output = `#{command}`
-    @status_code = $?.to_i # rubocop:disable Style/SpecialGlobalVars
+    @status_code = $? # rubocop:disable Style/SpecialGlobalVars
   end
 
-  sig { returns(T.untyped) }
+  sig { returns(T.nilable(T::Hash[String, String])) }
   def build
     insert_exit_code
     parsed_results
@@ -20,13 +23,13 @@ class Results
 
   private
 
-  sig { returns(T.untyped) }
+  sig { returns(T.nilable(T::Hash[String, String])) }
   def parsed_results
-    @parsed_results ||= JSON.parse(output)
+    @parsed_results ||= JSON.parse(T.must(output))
   end
 
-  sig { returns(T.untyped) }
+  sig { void }
   def insert_exit_code
-    parsed_results["__exit_code"] = status_code
+    T.must(parsed_results)["__exit_code"] = T.must(status_code)
   end
 end

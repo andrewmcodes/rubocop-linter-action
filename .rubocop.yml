@@ -23,3 +23,7 @@ Style/StringLiterals:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/ClassLength:
+  Exclude:
+    - "lib/github/check_run_service.rb"

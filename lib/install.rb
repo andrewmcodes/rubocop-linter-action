@@ -5,19 +5,19 @@ class Install
 
   DEFAULT_DEPENDENCIES = T.let({
     "rubocop" => "latest"
-  }.freeze, T::Hash[T.untyped, T.untyped])
+  }.freeze, T::Hash[String, String])
 
-  # sig { returns(T::Hash[T.untyped, T.untyped]) }
+  sig { returns(T.nilable(T::Hash[String, String])) }
   attr_reader :config
 
-  sig { params(config: T.untyped).returns(T.untyped) }
+  sig { params(config: T.nilable(T::Hash[String, String])).void }
   def initialize(config)
-    @config = Hash(config)
+    @config = Hash(config) # Not sure we need to cast as hash bc of the return from Configuration
   end
 
-  sig { returns(T.nilable(T::Boolean)) }
+  sig { returns(T::Boolean) }
   def run
-    return system("bundle install") if config.fetch("bundle", false)
+    return system("bundle install") if T.must(config).fetch("bundle", false)
 
     system("gem install #{dependencies}")
   end
@@ -26,12 +26,12 @@ class Install
 
   sig { returns(String) }
   def dependencies
-    DEFAULT_DEPENDENCIES.merge(custom_dependencies).map(&method(:version_string)).join(" ")
+    DEFAULT_DEPENDENCIES.merge(T.must(custom_dependencies)).map(&method(:version_string)).join(" ")
   end
 
   sig { returns(T.any(NilClass, T::Hash[String, String])) }
   def custom_dependencies
-    Hash[config.fetch("versions", []).map(&method(:version))]
+    Hash[T.must(config).fetch("versions", []).map(&method(:version))]
   end
 
   sig { params(dependency: T.any(T::Hash[T.untyped, T.untyped], String)).returns(String) }

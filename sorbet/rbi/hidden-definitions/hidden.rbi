@@ -8070,8 +8070,8 @@ end
 class Object
   include ::JSON::Ext::Generator::GeneratorMethods::Object
   include ::PP::ObjectMixin
-  include ::ActiveSupport::Dependencies::Loadable
   include ::ActiveSupport::Tryable
+  include ::ActiveSupport::Dependencies::Loadable
   include ::ActiveSupport::ToJsonWithActiveSupportEncoder
   def as_json(options=T.unsafe(nil)); end
 

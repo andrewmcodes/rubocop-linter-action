@@ -30,50 +30,53 @@ class RubocopLinterAction
 
   sig { returns(T.untyped) }
   def run
+    return unless github_data
+
     install_gems
     run_check_run_service
   end
 
   private
 
-  sig { returns(T.untyped) }
+  sig { returns(T.nilable(T::Hash[String, String])) }
   def config
-    @config ||= Configuration.new(github_data.workspace).build
+    @config ||= Configuration.new(T.must(github_data.workspace)).build
   end
 
-  sig { returns(T.untyped) }
+  sig { returns(Github::Data) }
   def github_data
     @github_data ||= Github::Data.new(Util.read_json(T.must(ENV["GITHUB_EVENT_PATH"])))
   end
 
-  sig { returns(T.untyped) }
+  sig { returns(T::Boolean) }
   def install_gems
     Install.new(config).run
   end
 
-  sig { returns(T.untyped) }
+  sig { returns(String) }
   def command
     Command.new(config).build
   end
 
-  sig { returns(T.untyped) }
-  def report
-    Report.new(github_data, command)
+  sig { returns(T.nilable(T::Hash[String, String])) }
+  def results
+    @results ||= Report.new(github_data, command).build
   end
 
   sig { returns(T.untyped) }
   def run_check_run_service
+    return unless results
+
     Github::CheckRunService.new(
-      report: report,
+      results: T.must(results),
       github_data: github_data,
-      report_adapter: ReportAdapter,
       check_name: check_name
     ).run
   end
 
-  sig { returns(T.nilable(String)) }
+  sig { returns(String) }
   def check_name
-    config.fetch("check_name", "Rubocop Action")
+    T.must(config).fetch("check_name", "Rubocop Action")
   end
 end
 

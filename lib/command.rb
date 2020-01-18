@@ -11,7 +11,7 @@ class Command
     @config = config
   end
 
-  sig { returns(T.untyped) }
+  sig { returns(String) }
   def build
     return base_command unless config
 

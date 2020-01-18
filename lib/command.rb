@@ -1,4 +1,4 @@
-# typed: ignore
+# typed: strict
 
 class Command
   extend T::Sig

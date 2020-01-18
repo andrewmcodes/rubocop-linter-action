@@ -1,4 +1,4 @@
-# typed: ignore
+# typed: strict
 
 module Helpers
   extend T::Sig

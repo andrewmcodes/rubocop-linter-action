@@ -1,9 +1,5 @@
-# typed: strong
 # typed: strict
-# typed: true
-# typed: false
-# typed: ignore
-# typed: false
+
 source "https://rubygems.org"
 
 gem "sorbet-runtime", "~> 0.5"

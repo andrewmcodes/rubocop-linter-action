@@ -1,4 +1,4 @@
-# typed: ignore
+# typed: strict
 
 # requires ...................................................................
 require "net/http"
@@ -43,7 +43,7 @@ class RubocopLinterAction
 
   sig { returns(T.untyped) }
   def github_data
-    @github_data ||= Github::Data.new(Util.read_json(ENV["GITHUB_EVENT_PATH"]))
+    @github_data ||= Github::Data.new(Util.read_json(T.must(ENV["GITHUB_EVENT_PATH"])))
   end
 
   sig { returns(T.untyped) }
@@ -71,7 +71,7 @@ class RubocopLinterAction
     ).run
   end
 
-  sig { returns(T.untyped) }
+  sig { returns(T.nilable(String)) }
   def check_name
     config.fetch("check_name", "Rubocop Action")
   end

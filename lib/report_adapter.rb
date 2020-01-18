@@ -1,17 +1,17 @@
-# typed: ignore
+# typed: strict
 
 class ReportAdapter
   class << self
     extend T::Sig
 
-    CONCLUSION_TYPES = { failure: "failure", success: "success" }.freeze
-    ANNOTATION_LEVELS = {
+    CONCLUSION_TYPES = T.let({ failure: "failure", success: "success" }.freeze, T::Hash[T.untyped, T.untyped])
+    ANNOTATION_LEVELS = T.let({
       "refactor" => "notice",
       "convention" => "notice",
       "warning" => "warning",
       "error" => "failure",
       "fatal" => "failure"
-    }.freeze
+    }.freeze, T::Hash[T.untyped, T.untyped])
 
     sig { params(report: T.untyped).returns(T.untyped) }
     def conclusion(report)

@@ -1,4 +1,4 @@
-# typed: ignore
+# typed: strict
 
 module Github
   class Data

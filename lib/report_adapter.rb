@@ -1,7 +1,9 @@
-# typed: true
+# typed: ignore
 
 class ReportAdapter
   class << self
+    extend T::Sig
+
     CONCLUSION_TYPES = { failure: "failure", success: "success" }.freeze
     ANNOTATION_LEVELS = {
       "refactor" => "notice",

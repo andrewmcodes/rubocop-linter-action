@@ -1,6 +1,8 @@
 # typed: ignore
 
 class Command
+  extend T::Sig
+
   sig { returns(T.untyped) }
   attr_reader :config
 

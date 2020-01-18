@@ -1,7 +1,9 @@
-# typed: true
+# typed: ignore
 
 module Github
   class Client
+    extend T::Sig
+
     sig { returns(T.untyped) }
     attr_reader :github_token, :user_agent
 

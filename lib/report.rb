@@ -1,6 +1,8 @@
 # typed: ignore
 
 class Report
+  extend T::Sig
+
   sig { returns(T.untyped) }
   attr_reader :github_data, :command
 

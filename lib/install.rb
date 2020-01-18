@@ -1,6 +1,8 @@
 # typed: ignore
 
 class Install
+  extend T::Sig
+
   DEFAULT_DEPENDENCIES = {
     "rubocop" => "latest"
   }.freeze
@@ -42,8 +44,9 @@ class Install
     end
   end
 
-  sig { params(dependency: T.string, version: T.string).returns(T.string) }
+  sig { params(dependency: String, version: String).returns(String) }
   def version_string(dependency, version)
+    binding.pry
     version == "latest" ? dependency : "#{dependency}:#{version}"
   end
 end

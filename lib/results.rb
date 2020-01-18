@@ -1,6 +1,8 @@
 # typed: ignore
 
 class Results
+  extend T::Sig
+
   sig { params(output: T.untyped).returns(T.untyped) }
   attr_accessor :output, :status_code
   sig { params(command: T.untyped).returns(T.untyped) }

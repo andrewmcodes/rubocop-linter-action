@@ -20,5 +20,6 @@ group :test do
   gem "json", "~> 2.3"
   gem "pry", "~> 0.12.2"
   gem "rspec", "~> 3.9.0"
+  gem "rspec-sorbet", "~> 1.5"
   gem "webmock", "~> 3.8"
 end

@@ -4,6 +4,7 @@
 require "net/http"
 require "json"
 require "sorbet-runtime"
+require "sorbet-static"
 require "time"
 require "yaml"
 
@@ -20,6 +21,8 @@ require_relative "./results"
 require_relative "./util"
 
 class RubocopLinterAction
+  extend T::Sig
+
   sig { returns(T.untyped) }
   def self.run
     new.run

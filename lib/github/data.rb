@@ -1,7 +1,9 @@
-# typed: true
+# typed: ignore
 
 module Github
   class Data
+    extend T::Sig
+
     sig { returns(T.untyped) }
     attr_reader :event
 

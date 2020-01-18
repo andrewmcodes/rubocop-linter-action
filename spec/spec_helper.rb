@@ -5,6 +5,7 @@ require "json"
 require "pry"
 require "time"
 require "yaml"
+require 'rspec/sorbet'
 require "simplecov"
 require "codecov"
 
@@ -33,6 +34,7 @@ ENV["GITHUB_REPOSITORY_NAME"] = "repository_name"
 ENV["GITHUB_WORKSPACE"] = "workspace"
 
 # configuration ..............................................................
+# RSpec::Sorbet.allow_doubles!
 RSpec.configure do |c|
   c.include Helpers
 end

@@ -66,6 +66,9 @@ GEM
     rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
+    rspec-sorbet (1.5.0)
+      sorbet
+      sorbet-runtime
     rspec-support (3.9.2)
     rubocop (0.79.0)
       jaro_winkler (~> 1.5.1)
@@ -109,6 +112,7 @@ DEPENDENCIES
   json (~> 2.3)
   pry (~> 0.12.2)
   rspec (~> 3.9.0)
+  rspec-sorbet (~> 1.5)
   rubocop (~> 0.79.0)
   rubocop-sorbet (~> 0.3.0)
   sorbet (~> 0.5)

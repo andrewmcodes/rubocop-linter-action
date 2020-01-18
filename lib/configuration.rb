@@ -1,6 +1,8 @@
 # typed: ignore
 
 class Configuration
+  extend T::Sig
+
   DEFAULT_CONFIG_PATH = ".github/config/rubocop_linter_action.yml".freeze
   sig { returns(T.untyped) }
   attr_reader :workspace

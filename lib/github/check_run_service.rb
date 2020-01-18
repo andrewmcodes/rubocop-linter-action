@@ -1,7 +1,9 @@
-# typed: true
+# typed: ignore
 
 module Github
   class CheckRunService
+    extend T::Sig
+
     SLICE_COUNT = 48
     sig { returns(T.untyped) }
     attr_reader :report, :github_data, :report_adapter, :check_name, :results

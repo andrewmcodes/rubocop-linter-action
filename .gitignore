@@ -1,3 +1,4 @@
 /tmp/
 /.vscode/
 .python-version
+/coverage/

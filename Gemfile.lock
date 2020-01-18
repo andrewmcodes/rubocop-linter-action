@@ -10,11 +10,16 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
+    codecov (0.1.16)
+      json
+      simplecov
+      url
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.3)
+    docile (1.3.2)
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     faraday-http-cache (2.0.0)
@@ -74,10 +79,16 @@ GEM
     sawyer (0.8.2)
       addressable (>= 2.3.5)
       faraday (> 0.8, < 2.0)
+    simplecov (0.17.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.0)
+    url (0.3.2)
     webmock (3.8.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -88,6 +99,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  codecov (~> 0.1.16)
   github_changelog_generator (~> 1.15.0)
   json (~> 2.3)
   pry (~> 0.12.2)

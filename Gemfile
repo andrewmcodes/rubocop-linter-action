@@ -8,6 +8,7 @@ group :development do
 end
 
 group :test do
+  gem "codecov", "~> 0.1.16", require: false
   gem "json", "~> 2.3"
   gem "pry", "~> 0.12.2"
   gem "rspec", "~> 3.9.0"

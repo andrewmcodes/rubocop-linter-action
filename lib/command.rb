@@ -10,6 +10,7 @@ class Command
   def build
     return base_command unless config
 
+    puts "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
     "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
   end
 

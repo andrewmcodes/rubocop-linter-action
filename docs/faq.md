@@ -13,3 +13,13 @@ There is a bug with Checks that might cause your runs to get jumbled in the UI, 
 This is straight out of GitHub's documentation. Put simply, this action won't work correctly on pull requests from a forked repository as is.
 
 I am open to a PR that will just output the results of the RuboCop run to the actions log if someone would like to take a shot at adding that!
+
+**3. The modified flag is not working!**
+
+If you specify the following in your config file:
+
+```yaml
+check_scope: 'modified'
+```
+
+Please note that this will not work on commits to master. If you have an idea on how to make this work, please open an issue or PR!

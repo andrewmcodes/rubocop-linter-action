@@ -10,7 +10,9 @@ class Command
   def build
     return base_command unless config
 
-    puts "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
+    c = "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
+    `#{c}`
+    `git remote -v`
     "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
   end
 
@@ -21,7 +23,7 @@ class Command
   end
 
   def check_scope
-    return "git diff origin/master --name-only --diff-filter=AM | xargs" if config["rubocop_check_scope"] == "modified"
+    return "git diff master --name-only --diff-filter=AM | xargs" if config["rubocop_check_scope"] == "modified"
   end
 
   def rubocop_config

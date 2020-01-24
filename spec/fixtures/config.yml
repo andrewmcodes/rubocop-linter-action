@@ -9,5 +9,5 @@ rubocop_config_path: '.rubocop.yml'
 rubocop_excluded_cops:
   - 'Style/FrozenStringLiteralComment'
 rubocop_fail_level: 'error'
+rubocop_check_scope: 'modified'
 bundle: false
-check_scope: 'modified'

@@ -45,6 +45,12 @@ rubocop_excluded_cops:
 # Resource: https://rubocop.readthedocs.io/en/stable/configuration/#severity
 rubocop_fail_level: 'warning'
 
+# The scope of code that Rubocop should lint. Use this if you only want to lint changed files. If this is not set
+# or not equal to 'modified', Rubocop is run against the entire codebase.
+# Valid options: 'modified'
+# Default: nil
+rubocop_check_scope: 'modified'
+
 # Instead of installing gems from rubygems, we can run `bundle install` on your project,
 # you would need to do this if you are using something like 'rubocop-github' or if you don't
 # want to list out dependencies with the `versions` key.
@@ -52,11 +58,6 @@ rubocop_fail_level: 'warning'
 # Default: false
 bundle: false
 
-# The scope of code that Rubocop should lint. Use this if you only want to lint changed files. If this is not set
-# or not equal to 'modified', Rubocop is run against the entire codebase.
-# Valid options: 'modified'
-# Default: nil
-check_scope: 'modified'
 ```
 
 ## Example

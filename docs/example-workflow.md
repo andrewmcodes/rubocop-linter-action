@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Rubocop Linter
-      uses: andrewmcodes/rubocop-linter-action@v3.0.0.rc4
+      uses: andrewmcodes/rubocop-linter-action@v3.0.0
       with:
         action_config_path: '.github/config/rubocop_linter_action.yml' # Note: this is the default location
       env:

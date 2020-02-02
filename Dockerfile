@@ -1,6 +1,6 @@
 FROM ruby:2.7.0-alpine
 
-RUN apk --no-cache add build-base git
+RUN apk --no-cache add build-base postgresql-dev git
 
 LABEL "repository"="https://github.com/andrewmcodes/rubocop-linter-action"
 LABEL "maintainer"="Andrew Mason <andrewmcodes@protonmail.com>"

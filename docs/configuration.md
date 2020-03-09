@@ -63,7 +63,7 @@ check_scope: 'modified'
 # but a change gets made, then with the check_scope config set to 'modified' rubocop will lint db/schema.rb. If you set
 # this to true, rubocop will ignore it.
 # Valid options: true || false
-# Default: nil
+# Default: false
 force_exclusion: true
 ```
 

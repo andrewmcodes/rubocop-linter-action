@@ -10,7 +10,7 @@ describe Command do
       command = Command.new(config).build
       expect(command).to eq(
         "git diff origin/master --name-only --diff-filter=AM | xargs rubocop --parallel "\
-         "-f json --fail-level error -c .rubocop.yml --except Style/FrozenStringLiteralComment"
+         "-f json --fail-level error -c .rubocop.yml --except Style/FrozenStringLiteralComment --force-exclusion"
       )
     end
   end

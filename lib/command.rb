@@ -10,7 +10,7 @@ class Command
   def build
     return base_command unless config
 
-    "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded}".strip.squeeze(" ")
+    "#{check_scope} #{base_command} #{fail_level} #{rubocop_config} #{excluded} #{force_exclusion}".strip.squeeze(" ")
   end
 
   private
@@ -36,5 +36,9 @@ class Command
   def fail_level
     level = config.fetch("rubocop_fail_level", "")
     return "--fail-level #{level}" unless level.empty?
+  end
+
+  def force_exclusion
+    return "--force-exclusion" if config["force_exclusion"]
   end
 end

@@ -11,3 +11,4 @@ rubocop_excluded_cops:
 rubocop_fail_level: 'error'
 bundle: false
 check_scope: 'modified'
+force_exclusion: true

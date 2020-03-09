@@ -57,6 +57,14 @@ bundle: false
 # Valid options: 'modified'
 # Default: nil
 check_scope: 'modified'
+
+# Whether or not to use --force-exclusion when building the rubocop command. Use this if you are only linting modified
+# files and typically excluded files have been changed. For example, if you exclude db/schema.rb in your rubocop.yml
+# but a change gets made, then with the check_scope config set to 'modified' rubocop will lint db/schema.rb. If you set
+# this to true, rubocop will ignore it.
+# Valid options: true || false
+# Default: nil
+force_exclusion: true
 ```
 
 ## Example

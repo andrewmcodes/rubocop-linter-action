@@ -13,3 +13,12 @@ Metrics/BlockLength:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/HashEachMethods:
+   Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true

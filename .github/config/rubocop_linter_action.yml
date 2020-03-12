@@ -36,6 +36,14 @@ rubocop_excluded_cops:
 # Resource: https://rubocop.readthedocs.io/en/stable/configuration/#severity
 rubocop_fail_level: 'warning'
 
+# Whether or not to use --force-exclusion when building the rubocop command. Use this if you are only linting modified
+ # files and typically excluded files have been changed. For example, if you exclude db/schema.rb in your rubocop.yml
+ # but a change gets made, then with the check_scope config set to 'modified' rubocop will lint db/schema.rb. If you set
+ # this to true, rubocop will ignore it.
+ # Valid options: true || false
+ # Default: false
+ rubocop_force_exclusion: true
+
 # Instead of installing gems from rubygems, we can run `bundle install` on your project,
 # you would need to do this if you are using something like 'rubocop-github' or if you don't
 # want to list out dependencies with the `versions` key.

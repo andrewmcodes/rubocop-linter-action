@@ -50,7 +50,7 @@ rubocop_fail_level: 'warning'
 # but a change gets made, then with the check_scope config set to 'modified' rubocop will lint db/schema.rb. If you set
 # this to true, rubocop will ignore it.
 # Valid options: true || false
-# Default: nil
+# Default: false
 rubocop_force_exclusion: true
 
 # Instead of installing gems from rubygems, we can run `bundle install` on your project,

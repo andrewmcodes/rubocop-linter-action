@@ -39,6 +39,7 @@ class Command
   end
 
   def force_exclusion
-    return "--force-exclusion" if config["force_exclusion"]
+    force_exclusion = config.fetch("rubocop_force_exclusion", "").to_s
+    return "--force-exclusion" unless force_exclusion.empty? || force_exclusion == "false"
   end
 end

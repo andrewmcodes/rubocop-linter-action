@@ -25,6 +25,7 @@ class RubocopLinterAction
 
   def run
     install_gems
+    run_console_output
     run_check_run_service
   end
 
@@ -43,11 +44,11 @@ class RubocopLinterAction
   end
 
   def command
-    Command.new(config).build
+    @command ||= Command.new(config).build
   end
 
   def report
-    Report.new(github_data, command)
+    @report ||= Report.new(github_data, command)
   end
 
   def run_check_run_service
@@ -56,6 +57,13 @@ class RubocopLinterAction
       github_data: github_data,
       report_adapter: ReportAdapter,
       check_name: check_name
+    ).run
+  end
+
+  def run_console_output
+    ConsoleReportPrinter.new(
+      results: report.build,
+      report_adapter: ReportAdapter
     ).run
   end
 

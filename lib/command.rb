@@ -15,12 +15,16 @@ class Command
 
   private
 
+  def base_branch
+    config.fetch("base_branch", "origin/master")
+  end
+
   def base_command
     "rubocop --parallel -f json"
   end
 
   def check_scope
-    return "git diff origin/master --name-only --diff-filter=AM | xargs" if config["check_scope"] == "modified"
+    return "git diff #{base_branch} --name-only --diff-filter=AM | xargs" if config["check_scope"] == "modified"
   end
 
   def rubocop_config

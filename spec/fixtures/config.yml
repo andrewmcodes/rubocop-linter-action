@@ -12,3 +12,4 @@ rubocop_fail_level: 'error'
 rubocop_force_exclusion: true
 bundle: false
 check_scope: 'modified'
+base_branch: 'origin/develop'

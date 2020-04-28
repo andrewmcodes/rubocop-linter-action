@@ -40,4 +40,4 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Shell Linter
-        uses: azohra/shell-linter@v0.1.0
+        uses: azohra/shell-linter@v0.3.0

@@ -33,11 +33,3 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Run Rubocop
         run: bin/rubocop
-  shell_linter:
-    name: Shell Lint Action
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    steps:
-      - uses: actions/checkout@master
-      - name: Run Shell Linter
-        uses: azohra/shell-linter@v0.1.0

@@ -23,3 +23,12 @@ check_scope: 'modified'
 ```
 
 Please note that this will not work on commits to master. If you have an idea on how to make this work, please open an issue or PR!
+
+**4. My GitHub Checks results don't match the output of running Rubocop locally.**
+
+Make sure you're running the same version of Rubocop that the linter is using. If using Bundler, try running `bundle update rubocop`. If you need the linter to use an older version, you can specify it in the config file:
+
+```yaml
+versions:
+  - rubocop: '0.88.0'
+```

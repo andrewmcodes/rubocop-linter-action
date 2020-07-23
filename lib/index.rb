@@ -64,6 +64,4 @@ class RubocopLinterAction
   end
 end
 
-unless RubocopLinterAction.run
-  exit 1
-end
+exit 1 unless RubocopLinterAction.run

@@ -6,6 +6,10 @@ inputs:
     description: 'Define a path to your optional action config file.'
     required: false
     default: '.github/config/rubocop_linter_action.yml'
+  exit_on_failure:
+    description: 'Return exit code if linter detect errors.'
+    required: false
+    default: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

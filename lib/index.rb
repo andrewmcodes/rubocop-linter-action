@@ -64,4 +64,5 @@ class RubocopLinterAction
   end
 end
 
-exit 1 unless RubocopLinterAction.run
+success = RubocopLinterAction.run
+return exit 1 if ENV["INPUT_EXIT_ON_FAILURE"] && !success

@@ -64,7 +64,9 @@ Default usage, similar to running `gem install rubocop && rubocop` from your com
 ![Rubocop Linter Checks Overview][image1]
 ![Rubocop Linter File Annotation][image2]
 
-## Config option
+## Config options
+
+### exit_on_failure
 
 Stop the workflow execution if the linter returns some failures.
 

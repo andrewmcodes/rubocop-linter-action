@@ -17,6 +17,7 @@ module Github
       id, started_at = create_check
       update_check(id, started_at)
       complete_check(id, started_at)
+      success?
     end
 
     private
@@ -66,6 +67,10 @@ module Github
 
     def conclusion
       report_adapter.conclusion(results)
+    end
+
+    def success?
+      !report_adapter.failure?(results)
     end
 
     def endpoint_url

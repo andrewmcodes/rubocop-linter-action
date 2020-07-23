@@ -12,9 +12,13 @@ class ReportAdapter
     }.freeze
 
     def conclusion(report)
-      return CONCLUSION_TYPES[:failure] if status_code(report).positive?
+      return CONCLUSION_TYPES[:failure] if failure?(report)
 
       CONCLUSION_TYPES[:success]
+    end
+
+    def failure?(report)
+      status_code(report).positive?
     end
 
     def summary(report)

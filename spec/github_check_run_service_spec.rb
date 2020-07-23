@@ -21,6 +21,6 @@ describe Github::CheckRunService do
     stub_request(:any, "https://api.github.com/repos/owner/repository_name/check-runs")
       .to_return(status: 200, body: '{"id": "id", "__exit_code":1}')
 
-    expect(subject.run).to be_a(Hash)
+    expect(subject.run).to be_falsey
   end
 end

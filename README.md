@@ -1,11 +1,14 @@
 <!-- Variables -->
 
 <!-- Files -->
+
 [changelog]: /CHANGELOG.md
 [coc]: /CODE_OF_CONDUCT.md
 [contributing]: /CONTRIBUTING.md
 [license]: /LICENSE.md
+
 <!-- Images -->
+
 [image1]: /screenshots/check-overview.png
 [image2]: /screenshots/file-annotation.png
 [logo]: /screenshots/rubocop-linter-action.png
@@ -61,6 +64,19 @@ Default usage, similar to running `gem install rubocop && rubocop` from your com
 ![Rubocop Linter Checks Overview][image1]
 ![Rubocop Linter File Annotation][image2]
 
+## Config option
+
+Stop the workflow execution if the linter returns some failures.
+
+```yaml
+- name: Rubocop Linter Action
+  uses: andrewmcodes/rubocop-linter-action@v3.2.0
+  with:
+    exit_on_failure: true
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
 ## Community
 
 ### Changelog
@@ -113,6 +129,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

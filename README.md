@@ -38,27 +38,27 @@ This GitHub Action provides a way to easily run Rubocop on your Ruby or Ruby on 
 
 Since GitHub Actions and the Checks API are continually changing, it is possible that there will be breaking API changes that affect this action. If so, please open an issue and we will look into it as soon as we can. Thank you for using this project! :heart:
 
-## Usage
-
-1. [Quickstart](#quickstart)
-2. [Configuration](#code-of-conduct)
-    - [Documentation](#subsection-a)
-    - [Example](#subsection-b)
-    - [Version Constraints](#subsection-b)
-3. [Inputs]()
-    - [Spec]()
-    - [Usage]()
-4. [Example Workflow]()
-5. [Rubocop Tips]()
-    - [Updates]()
-    - [Documentation]()
-6. [FAQ]()
+## Github
 
 > NOTE: The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty pull_requests array.
 
 This is straight out of GitHub's documentation. Put simply, this action won't work correctly on pull requests from a forked repository as is. I am open to a PR that will just output the results of the RuboCop run to the actions log if someone would like to take a shot at adding that!
 
+## Usage
 
+1. [Quickstart](#quickstart)
+    - [Screenshots](#screenshots)
+2. [Configuration](#configuration)
+    - [Documentation](#documentation)
+    - [Example](#example)
+    - [Version Constraints](#version-constraints)
+3. [Inputs](#inputs)
+    - [Spec](#spec)
+    - [Usage](#usage)
+4. [Example Workflow](#example-workflow)
+5. [Updates](#updates)
+6. [Rubocop Docs](#rubocop-docs)
+7. [FAQ](#faq)
 
 ### Quickstart
 
@@ -75,6 +75,192 @@ Default usage, similar to running `gem install rubocop && rubocop` from your com
 
 ![Rubocop Linter Checks Overview][image1]
 ![Rubocop Linter File Annotation][image2]
+
+### Configuration
+
+We use a configuration file to configure the action. This allows us to have a very clean action, and minimize problems when using GitHub Action inputs. You do not have to have a config file if you want to use the base settings, but if you want to customize the action, you will need to add one. You can specify where the config lives by using the inputs, but it will default to `.github/config/rubocop_linter_action.yml` if it is not specified.
+
+### Documentation
+
+```yml
+# .github/config/rubocop_linter_action.yml
+
+# Description: The name of the check that will be created.
+# Valid Options: A reasonably sized string.
+# Default: 'Rubocop Action'
+check_name: 'Rubocop Results'
+
+# Description: Versions required to run your RuboCop checks.
+# Valid options: RuboCop and any RuboCop extension, by default the latest gem version will be used. You can explicitly state that
+# (not required) or use a version number, like '1.5.1'.
+# Default:
+#   versions:
+#     - rubocop: 'latest'
+versions:
+  - rubocop
+  - rubocop-rails
+  - rubocop-minitest
+  - rubocop-performance: '1.5.1'
+  - rubocop-rspec: '1.37.0'
+
+# Description: Rubocop configuration file path relative to the workspace.
+# Valid options: A valid file path inside of the workspace.
+# Default: nil
+# Note: This does not need to be filled out for Rubocop to still find your config.
+# Resource: https://rubocop.readthedocs.io/en/stable/configuration/
+rubocop_config_path: '.rubocop.yml'
+
+# Run all cops enabled by configuration except this list.
+# Valid options: list of valid cop(s) and/or departments.
+# Default: nil
+# Resource: https://rubocop.readthedocs.io/en/stable/cops/
+rubocop_excluded_cops:
+  - 'Style/FrozenStringLiteralComment'
+
+# Minimum severity for exit with error code
+# Valid options: 'refactor', 'convention', 'warning', 'error', or 'fatal'.
+# Default: 'warning'
+# Resource: https://rubocop.readthedocs.io/en/stable/configuration/#severity
+rubocop_fail_level: 'warning'
+
+# Whether or not to use --force-exclusion when building the rubocop command. Use this if you are only linting modified
+# files and typically excluded files have been changed. For example, if you exclude db/schema.rb in your rubocop.yml
+# but a change gets made, then with the check_scope config set to 'modified' rubocop will lint db/schema.rb. If you set
+# this to true, rubocop will ignore it.
+# Valid options: true || false
+# Default: false
+rubocop_force_exclusion: true
+
+# Instead of installing gems from rubygems, we can run `bundle install` on your project,
+# you would need to do this if you are using something like 'rubocop-github' or if you don't
+# want to list out dependencies with the `versions` key.
+# Valid options: true || false
+# Default: false
+bundle: false
+
+# The scope of code that Rubocop should lint. Use this if you only want to lint changed files. If this is not set
+# or not equal to 'modified', Rubocop is run against the entire codebase. Note that this will not work on the master branch.
+# Valid options: 'modified'
+# Default: nil
+check_scope: 'modified'
+
+# The base branch against which changes will be compared, if check_scope config is set to 'modified'.
+# This setting is not used if check_scope != 'modified'.
+# Valid options: 'origin/another_branch'
+# Default: 'origin/master'
+base_branch: 'origin/master'
+```
+
+### Example
+
+```yml
+# .github/config/rubocop_linter_action.yml
+
+versions:
+  - rubocop-rails
+  - rubocop-performance: '1.5.1'
+  - rubocop-minitest: 'latest'
+  - rubocop-rspec: '1.37.0'
+```
+
+
+### Version Constraints
+
+It is **highly** recommend you tie yourself to a version and do not do the following. I promise your life will be much easier. 😇
+
+```yml
+# ❌ Danger, sometimes I break things!
+uses: andrewmcodes/rubocop-linter-action@master
+
+# ✅ Much better.
+uses: andrewmcodes/rubocop-linter-action@v2.0.0
+```
+
+### Inputs
+
+With previous versions, we accepted several inputs. This has all gone away with the new configuration file. The only input accepted for the action is `action_config_path`, which defines where your configuration file for the action is if it is not at `.github/config/rubocop_linter_action.yml`.
+
+### Spec
+
+```yml
+action_config_path:
+  description: 'Define a path to your optional action config file.'
+  required: false
+  default: '.github/config/rubocop_linter_action.yml'
+```
+
+### Usage
+
+```yml
+with:
+  action_config_path: '.github/actions/config/rubocop.yml'
+```
+### Example Workflow
+
+Here is an example workflow file incorporating Rubocop Linter Action with customized usage based on the values in your configuration file:
+
+```yaml
+name: Linters
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Rubocop Linter
+      uses: andrewmcodes/rubocop-linter-action@v3.2.0
+      with:
+        action_config_path: '.github/config/rubocop_linter_action.yml' # Note: this is the default location
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+**Go [here](https://github.com/handcars/rubocop-linter-action-playground/blob/master/.github/workflows) to see more examples!**
+
+### Updates
+
+Since the action will default to the latest Rubocop release, you may run into isues with outdated config options that are specified in your `.rubocop.yml`. To easily upgrade your config, use [mry](https://github.com/pocke/mry).
+
+### Rubocop Docs
+
+Several of the config options map directly to Rubocop's inputs. Check [their documentation](https://rubocop.readthedocs.io/en/stable/basic_usage/#command-line-flags) for help or more info.
+
+### FAQ
+
+_If you cannot find an answer here that you think should be included, let us know!!_
+
+**1. Why is my check result being shown under the wrong header?**
+
+There is a bug with Checks that might cause your runs to get jumbled in the UI, but they will all still run and render annotations in the diff correctly. Hopefully this will get fixed or we figure out that we are doing something wrong that is fixable.
+
+**2. How come I can't create checks on forked repositories? [(example)](https://github.com/ruby/spec/commit/1cfa9f188e8342993d149807210b6777189cfe3f/checks?check_suite_id=335929828)**
+
+> NOTE: The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty pull_requests array.
+
+This is straight out of GitHub's documentation. Put simply, this action won't work correctly on pull requests from a forked repository as is.
+
+I am open to a PR that will just output the results of the RuboCop run to the actions log if someone would like to take a shot at adding that!
+
+**3. The modified flag is not working!**
+
+If you specify the following in your config file:
+
+```yaml
+check_scope: 'modified'
+```
+
+Please note that this will not work on commits to master. If you have an idea on how to make this work, please open an issue or PR!
+
+**4. My GitHub Checks results don't match the output of running Rubocop locally.**
+
+Make sure you're running the same version of Rubocop that the linter is using. If using Bundler, try running `bundle update rubocop`. If you need the linter to use an older version, you can specify it in the config file:
+
+```yaml
+versions:
+  - rubocop: '0.88.0'
+```
 
 ## Config options
 

@@ -40,13 +40,25 @@ Since GitHub Actions and the Checks API are continually changing, it is possible
 
 ## Usage
 
-### Documentation
-
-**Please view the [official documentation](https://rubocop-linter-action.readthedocs.io) for more detailed instructions**, including how to setup and use a configuration file to customize the action. Note that you can set the version for the documentation you are viewing in the bottom right.
+1. [Quickstart](#quickstart)
+2. [Configuration](#code-of-conduct)
+    - [Documentation](#subsection-a)
+    - [Example](#subsection-b)
+    - [Version Constraints](#subsection-b)
+3. [Inputs]()
+    - [Spec]()
+    - [Usage]()
+4. [Example Workflow]()
+5. [Rubocop Tips]()
+    - [Updates]()
+    - [Documentation]()
+6. [FAQ]()
 
 > NOTE: The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty pull_requests array.
 
 This is straight out of GitHub's documentation. Put simply, this action won't work correctly on pull requests from a forked repository as is. I am open to a PR that will just output the results of the RuboCop run to the actions log if someone would like to take a shot at adding that!
+
+
 
 ### Quickstart
 

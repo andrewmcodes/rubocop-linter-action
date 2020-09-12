@@ -1,10 +1,9 @@
 ---
 name: Documentation issue
 about: Select this option if you have found an issue with the docs, or think something should be added.
-title: ''
+title: ""
 labels: documentation
-assignees: andrewmcodes
-
+assignees: ""
 ---
 
 # Documentation

@@ -10,13 +10,13 @@ module Github
     end
 
     def send_request(url: "", method: "patch", body: {}, cancel_request: false)
-      response = request_http do |http|
+      response = request_http { |http|
         if method == "patch"
           http.patch(url, body.to_json, headers)
         else
           http.post(url, body.to_json, headers)
         end
-      end
+      }
       # Raise if this a request to cancel the check run to prevent a potential infinite loop
       raise "#{response.code}: #{response.message}: #{response.body}" if cancel_request
 
@@ -49,7 +49,7 @@ module Github
       # If request response code is not 200 || 201, send a request to cancel the check run suite.
       # See: https://bit.ly/2QLoFKx
       send_request(
-        url: "#{url}/#{body['id']}",
+        url: "#{url}/#{body["id"]}",
         body: cancel_suite_payload(body["name"], body["head_sha"]),
         cancel_request: true
       )

@@ -28,7 +28,7 @@ module Github
         method: "post",
         body: create_check_payload
       )
-      puts "Check run created with id: #{check['id']}."
+      puts "Check run created with id: #{check["id"]}."
       [check["id"], check["started_at"]]
     end
 

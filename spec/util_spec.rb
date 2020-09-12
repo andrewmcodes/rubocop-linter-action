@@ -8,16 +8,16 @@ describe Util do
   context "path doesn't exist" do
     it "#read_json" do
       expect(subject.read_json("fake/test/file.json")).to eq({})
-      expect do
+      expect {
         subject.read_json("fake/test/file.json")
-      end.to output("\"Notice: No file: fake/test/file.json\"\n").to_stdout
+      }.to output("\"Notice: No file: fake/test/file.json\"\n").to_stdout
     end
 
     it "#read_yaml" do
       expect(subject.read_yaml("fake/test/file.yml")).to eq({})
-      expect do
+      expect {
         subject.read_yaml("fake/test/file.yml")
-      end.to output("\"Notice: No file: fake/test/file.yml\"\n").to_stdout
+      }.to output("\"Notice: No file: fake/test/file.yml\"\n").to_stdout
     end
   end
 

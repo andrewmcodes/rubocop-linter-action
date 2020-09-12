@@ -36,7 +36,7 @@ class Command
 
   def excluded
     excluded_cops = config.fetch("rubocop_excluded_cops", "")
-    "--except #{excluded_cops.join(' ')}" unless excluded_cops.empty?
+    "--except #{excluded_cops.join(" ")}" unless excluded_cops.empty?
   end
 
   def fail_level

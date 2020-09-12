@@ -9,27 +9,26 @@ on:
       - master
 
 jobs:
-  rubocop:
-    name: RuboCop Action
+  standardrb:
+    name: StandardRB Check Action
     runs-on: ubuntu-latest
-    timeout-minutes: 2
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Set up Ruby 2.7
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.x
-      - uses: actions/cache@v1.1.2
+          ruby-version: 2.7.1
+      - name: Cache gems
+        uses: actions/cache@v1
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
-            ${{ runner.os }}-gem-
-      - name: Bundle
+            ${{ runner.os }}-gems-
+      - name: Install gems
         run: |
-          gem install bundler
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
-      - name: Run RuboCop
-        run: bin/rubocop
+      - name: Run StandardRB
+        run: bin/standardrb

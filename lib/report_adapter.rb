@@ -2,7 +2,7 @@
 
 class ReportAdapter
   class << self
-    CONCLUSION_TYPES = { failure: "failure", success: "success" }.freeze
+    CONCLUSION_TYPES = {failure: "failure", success: "success"}.freeze
     ANNOTATION_LEVELS = {
       "refactor" => "notice",
       "convention" => "notice",
@@ -37,7 +37,7 @@ class ReportAdapter
               'start_column': (location["start_column"] if same_line),
               'end_column': (location["last_column"] if same_line),
               'annotation_level': annotation_level(offense["severity"]),
-              'message': "#{offense['message']} [#{offense['cop_name']}]"
+              'message': "#{offense["message"]} [#{offense["cop_name"]}]"
             }.compact.transform_keys!(&:to_s)
           )
         end

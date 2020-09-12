@@ -252,8 +252,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-**Go [here](https://github.com/handcars/rubocop-linter-action-playground/blob/master/.github/workflows) to see more examples!**
-
 ### Updates
 
 Since the action will default to the latest RuboCop release, you may run into isues with outdated config options that are specified in your `.rubocop.yml`. To easily upgrade your config, use [mry](https://github.com/pocke/mry).

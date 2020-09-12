@@ -1,22 +1,22 @@
-name: 'Rubocop Linter Action'
-description: 'A GitHub Action that lints your Ruby or Ruby on Rails code with Rubocop!'
-author: 'Andrew Mason <andrewmcodes@protonmail.com>'
+name: "RuboCop Linter Action"
+description: "A GitHub Action that lints your Ruby or Ruby on Rails code with RuboCop!"
+author: "Andrew Mason <andrewmcodes@protonmail.com>"
 inputs:
   action_config_path:
-    description: 'Define a path to your optional action config file.'
+    description: "Define a path to your optional action config file."
     required: false
-    default: '.github/config/rubocop_linter_action.yml'
+    default: ".github/config/rubocop_linter_action.yml"
   exit_on_failure:
-    description: 'Return exit code if linter returns some failures.'
+    description: "Return exit code if linter returns some failures."
     required: false
     default: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.action_config_path }}
 env:
   GITHUB_TOKEN: secrets.GITHUB_TOKEN
 branding:
-  icon: 'code'
-  color: 'red'
+  icon: "code"
+  color: "red"

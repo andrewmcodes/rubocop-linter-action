@@ -1,15 +1,15 @@
-check_name: 'Rubocop Results'
+check_name: "RuboCop Results"
 versions:
   - rubocop
   - rubocop-rails
-  - rubocop-performance: '1.5.1'
-  - rubocop-minitest: 'latest'
-  - rubocop-rspec: '1.37.0'
-rubocop_config_path: '.rubocop.yml'
+  - rubocop-performance: "1.5.1"
+  - rubocop-minitest: "latest"
+  - rubocop-rspec: "1.37.0"
+rubocop_config_path: ".rubocop.yml"
 rubocop_excluded_cops:
-  - 'Style/FrozenStringLiteralComment'
-rubocop_fail_level: 'error'
+  - "Style/FrozenStringLiteralComment"
+rubocop_fail_level: "error"
 rubocop_force_exclusion: true
 bundle: false
-check_scope: 'modified'
-base_branch: 'origin/develop'
+check_scope: "modified"
+base_branch: "origin/develop"

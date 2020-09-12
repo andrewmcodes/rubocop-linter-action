@@ -60,7 +60,7 @@ class RubocopLinterAction
   end
 
   def check_name
-    config.fetch("check_name", "Rubocop Action")
+    config.fetch("check_name", "RuboCop Action")
   end
 end
 
